@@ -67,19 +67,25 @@ public class Person {
 	}
 
 	// main() method for testing
-	/*
-	 * public static void main(String[] args) { Person Teako = new
-	 * Person("Teakosheen", "TK", 1, 7, 1983); Person Kenneth = new
-	 * Person("Kenneth", "KJ", 12, 11, 1997); Person Jimmi = new Person("Jimmi",
-	 * "JC", 28, 01, 1982);
-	 * 
-	 * List<Person> personList = new ArrayList<>(); personList.add(Teako);
-	 * personList.add(Kenneth); personList.add(Jimmi);
-	 * 
-	 * Kenneth.setTlfNumber("22667902"); Jimmi.setEmail("Jimmi.C.B@hotmail.com");
-	 * Teako.setEmail("Teako@hotmail.com"); Teako.setTlfNumber("12345678");
-	 * 
-	 * for(Person p : personList) { System.out.println(p); } }
-	 */
+
+	public static void main(String[] args) {
+		Person Teako = new Person("Teakosheen", "TK", 1, 7, 1983);
+		Person Kenneth = new Person("Kenneth", "KJ", 12, 11, 1997);
+		Person Jimmi = new Person("Jimmi", "JC", 28, 01, 1982);
+
+		List<Person> personList = new ArrayList<>();
+		personList.add(Teako);
+		personList.add(Kenneth);
+		personList.add(Jimmi);
+
+		Kenneth.setTlfNumber("22667902");
+		Jimmi.setEmail("Jimmi.C.B@hotmail.com");
+		Teako.setEmail("Teako@hotmail.com");
+		Teako.setTlfNumber("12345678");
+
+		for (Person p : personList) {
+			System.out.println(p);
+		}
+	}
 
 }
