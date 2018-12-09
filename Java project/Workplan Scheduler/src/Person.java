@@ -67,7 +67,7 @@ public class Person {
 	}
 
 	// main() method for testing
-
+	/*
 	public static void main(String[] args) {
 		Person Teako = new Person("Teakosheen", "TK", 1, 7, 1983);
 		Person Kenneth = new Person("Kenneth", "KJ", 12, 11, 1997);
@@ -87,5 +87,6 @@ public class Person {
 			System.out.println(p);
 		}
 	}
+	*/
 
 }
