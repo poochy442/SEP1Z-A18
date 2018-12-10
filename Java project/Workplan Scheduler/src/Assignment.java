@@ -11,7 +11,7 @@ Important:
 // Fields 
 private Date date;
 private String test;
-private int numberOfNotes;
+private int numberOfTests;
 private Date[] assignment;
 
 //Constructor
@@ -26,6 +26,7 @@ this.dates = new Test[maxNumberOfAssignments];
 // Methods
 // setters / getters
 
+// Først datoen.
 public Date setDate(Date date)
 {
    this.date = date;
@@ -36,6 +37,7 @@ public Date getDate()
    return date[index];
 }
 
+// Dernæst testen.
 public String setTest(String test)
 {
 this.test = test;   
