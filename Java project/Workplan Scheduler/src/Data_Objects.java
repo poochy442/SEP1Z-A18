@@ -25,5 +25,9 @@ public class Data_Objects {
 		   Employee Emp8 = new Employee("Carol", "CL9", "Trained");
 		 }
 	}
-
+	// Vi skal også tage højde for: 
+	// Dato, fat, Enzymes, Protein
+	// Vacation, Pending Vacation, Milk, 
+	// Cattle, Starch, Pig, Nitrogen, Chicken
+	// Day on/off, Fiber/Sugar, Flex, Team-Number, Identials.
 }
