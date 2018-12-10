@@ -11,15 +11,14 @@ Important:
 // Fields 
 private Date date;
 private String test;
-private int numberOfTests;
-private Date[] assignment;
+private Date[] date;
+private Assignment[] assignment;
 
 //Constructor
 public Assignment(int day, int month, int year, String test)(int maxNumberOfNotes)
 {
 this.date = new date(day, month, year);
 this.test = test;
-this.numberOfAssignments = 0;
 this.dates = new Test[maxNumberOfAssignments];
 }
    
@@ -32,6 +31,7 @@ public Date setDate(Date date)
    this.date = date;
 }
 
+// Vi er nødt til at have et index her.
 public Date getDate()
 {
    return date[index];
@@ -62,7 +62,7 @@ public void addTest(String test)
    numberOfTests++;
 }
 
-// Test gives priotering 
+// Test gives priotering Sættes til høj priotering.
 public void addHighPriorityAssignment(String assignment)
 {
    test[numberOfTests] = new test(test);
@@ -70,7 +70,7 @@ public void addHighPriorityAssignment(String assignment)
    numberOfTest++;
 }
 
-// En opgave fjernes igen.
+// En opgave fjernes igen. - Når den er udført.
 public void removeAssignment(int index)
 {
    for (int i = index; i < numberOfAssignments; i++)
@@ -80,7 +80,7 @@ public void removeAssignment(int index)
    numberOfTests--;
 }
 
-// Samle alle opgaver med høj priotering.
+// Saml alle opgaver med høj priotering. (De skal laves først.)
 public Date[] getAllAssignments()
 {
    return Assignments;
@@ -99,7 +99,7 @@ public int getNumberOfPriorityAssignments()
    return k;
 }
 
-// Samle alle datoer med høj priotering.
+// Saml alle datoer med høj priotering. 
 public Test[] getAllHighPriorityAssignments()
 {
 Date[] hpAssign = new Date[getNumberOfPriorityAssignments()];
@@ -112,18 +112,18 @@ for (int i = 0 ;i < numberOfAssignments; i++)
       k++;
    }
 }
-return hpassignment;
+return hpaAssignment;
    
 }
 
 
-// Her oprettes og testes oogaverne og om de er sat til høj eller lav priotet.
+// Her oprettes og testes opgaverne og om de er sat til høj eller lav priotet.
 public static void main (String [] args)
 {
    Date Assignment = new test("Diary and Feed");
    System.out.println(Assignment.getAssignment());
    
-   Assingnment.setAssignment("Fat and protein");
+   Assignment.setAssignment("Fat and protein");
    System.out.println(Assignment.getAssignment());
    
    System.out.println(Assignment.isHighPriority());
