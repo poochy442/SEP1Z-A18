@@ -5,14 +5,16 @@ import java.util.ArrayList;
 public class Employee extends Person {
 
 	// Fields
-	List<SimpleEntry<String, Integer>> preferences;
-	List<SimpleEntry<String, Integer>> training;
+	private List<SimpleEntry<String, Integer>> preferences;
+	private List<SimpleEntry<String, Integer>> training;
+	private int counter;
 
 	// Constructor
 	public Employee(String name, String initials, int day, int month, int year) {
 		super(name, initials, day, month, year);
 		preferences = new ArrayList<>();
 		training = new ArrayList<>();
+		counter = 0;
 	}
 
 	// Methods
@@ -34,6 +36,7 @@ public class Employee extends Person {
 			if (preferences.get(i).getKey().equals(test)) {
 				return preferences.get(i).getValue();
 			}
+			counter++;
 		}
 		return 0;
 	}
@@ -55,6 +58,7 @@ public class Employee extends Person {
 			if(entry.getKey().equals(test)) {
 				return entry.getValue();
 			}
+			counter++;
 		}
 		return -1;
 	}
