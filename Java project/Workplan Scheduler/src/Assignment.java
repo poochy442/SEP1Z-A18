@@ -10,6 +10,12 @@ public class Assignment {
 		vacation = false;
 	}
 	
+	public Assignment(Date date, String test) {
+		this.date = date;
+		this.test = test;
+		vacation = false;
+	}
+	
 	public void setTest(String test) {
 		this.test = test;
 	}

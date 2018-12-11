@@ -53,8 +53,7 @@ public class Schedule {
 			addMap.put(false, vacation);
 			
 			returnMap.put(p, addMap);
-		}
-		
+		}		
 		
 		return returnMap;
 	}
@@ -62,38 +61,6 @@ public class Schedule {
 	// DEBUG: returns the counter
 	public Integer getCounter() {
 		return counter;
-	}
-	
-	// main() method for testing
-	public static void main(String[] args) {
-		Schedule schedule = new Schedule();
-		Employee e1 = new Employee("Kenneth", "KJ", 12, 11, 1997);
-		Employee e2 = new Employee("Jimmi", "JB", 15, 16, 1892);
-		
-		Date today = new Date(9, 12, 2018);
-		
-		Assignment a1 = new Assignment(today);
-		Assignment a2 = new Assignment(today);
-		Assignment v1 = new Assignment(today);
-		v1.setVacation();
-		
-		schedule.addAssignment(a1, e1);
-		schedule.addAssignment(a2, e2);
-		schedule.addAssignment(v1, e2);
-		
-		Map<Person, Map<Boolean, List<Assignment>>> result = schedule.sortAssignments();
-		
-		for(Person p : schedule.getAssignments().keySet()) {
-			System.out.println(p.getName());
-			System.out.println("Work: ");
-			for(Assignment a : result.get(p).get(true)) {
-				System.out.println(a);
-			}
-			System.out.println("Vacations: ");
-			for(Assignment a : result.get(p).get(false)) {
-				System.out.println(a);
-			}
-		}
 	}
 	
 }
