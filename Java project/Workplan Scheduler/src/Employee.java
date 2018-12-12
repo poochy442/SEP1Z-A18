@@ -7,6 +7,7 @@ public class Employee extends Person {
 	// Fields
 	private List<SimpleEntry<String, Integer>> preferences;
 	private List<SimpleEntry<String, Integer>> training;
+	private Boolean hidden;
 	private int counter;
 
 	// Constructor
@@ -14,6 +15,7 @@ public class Employee extends Person {
 		super(name, initials, day, month, year);
 		preferences = new ArrayList<>();
 		training = new ArrayList<>();
+		hidden = false;
 		counter = 0;
 	}
 
@@ -53,6 +55,14 @@ public class Employee extends Person {
 		training.add(new SimpleEntry<String, Integer>(test, level));
 	}
 	
+	public Boolean getHiddenStatus() {
+		return hidden;
+	}
+	
+	public void setHiddenStatus(Boolean status) {
+		hidden = status;
+	}
+	
 	public int checkForTraining(String test) {
 		for(SimpleEntry<String, Integer> entry : training) {
 			if(entry.getKey().equals(test)) {
@@ -61,5 +71,9 @@ public class Employee extends Person {
 			counter++;
 		}
 		return -1;
+	}
+	
+	public Integer getCounter() {
+		return counter;
 	}
 }
