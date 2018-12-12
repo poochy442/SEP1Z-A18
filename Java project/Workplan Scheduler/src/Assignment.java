@@ -1,4 +1,5 @@
 public abstract class Assignment
+
 {
 	/*
 Important:
@@ -65,6 +66,6 @@ public String isThereAVacate(Object vacate)
 	}
 		
 }
-
+// Ved ikke om dette var hvad du mente Kenneth.
 
 }
