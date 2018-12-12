@@ -129,4 +129,36 @@ public class Date {
 				&& year == other.year;
 	}
 	
+	public boolean isBetween(Date lowerBound, Date upperBound) {
+		if(lowerBound.equals(upperBound)) {
+			if(this.equals(lowerBound)) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+		
+		if(lowerBound.getYear() == lowerBound.getYear()) {
+			if(lowerBound.getMonth() == upperBound.getMonth()) {
+				return this.day > lowerBound.getDay() && this.day < upperBound.getDay();
+			} else {
+				if(this.month == lowerBound.getMonth()) {
+					return this.day > lowerBound.day;
+				} else if(this.month == upperBound.getMonth()) {
+					return this.day < upperBound.getDay();
+				} else {
+					return false;
+				}
+			}
+		} else {
+			if(this.getYear() == lowerBound.getYear() && this.getMonth() == lowerBound.getMonth()) {
+				return this.getDay() > lowerBound.getDay();
+			} else if(this.getYear() == upperBound.getYear() && this.getMonth() == upperBound.getMonth()) {
+				return this.day < upperBound.getDay();
+			} else {
+				return false;
+			}
+		}
+	}
+	
 }

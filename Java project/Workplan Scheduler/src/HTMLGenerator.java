@@ -33,7 +33,7 @@ public class HTMLGenerator {
 
 		// Save div
 		for (int i = 0; i < lines.size(); i++) {
-			if (lines.get(i).matches("(.*)class=\"table\"(.*))")) {
+			if (lines.get(i).matches("(.*)class=\"table\"(.*)")) {
 				divStart = i;
 			}
 			if (lines.get(i).matches("(.*)End Point(.*)")) {
@@ -53,19 +53,13 @@ public class HTMLGenerator {
 		divEnd = 0;
 
 		// Insert div
-		for (int i = 0; i < lines.size(); i++) {
-			if (lines.get(i).matches("(.*)End Point(.*)")) {
-				divEnd = i;
-			}
-
-			if (divEnd != 0) {
-				for (int j = 0; j < emptyTable.size(); j++) {
-					lines.add(divEnd + 1 + j, emptyTable.get(j));
-				}
-				break;
-			}
-		}
-
+		/*
+		 * for (int i = 0; i < lines.size(); i++) { if
+		 * (lines.get(i).matches("(.*)End Point(.*)")) { divEnd = i; }
+		 * 
+		 * if (divEnd != 0) { for (int j = 0; j < emptyTable.size(); j++) {
+		 * lines.add(divEnd + 1 + j, emptyTable.get(j)); } break; } }
+		 */
 		// TODO: CheckArray call
 
 		for (int i = 0; i < lines.size(); i++) {
@@ -104,6 +98,8 @@ public class HTMLGenerator {
 			}
 
 			switch (line) {
+			case "$dataTeam":
+				lines.set(i, lines.get(i).replace("$dataTeam", "Team 1"));
 			case "$DateMon":
 				Date workingDate = startDate;
 				lines.set(i, lines.get(i).replace("$DateMon", startDate.toString()));
@@ -124,18 +120,21 @@ public class HTMLGenerator {
 				tableDataRow = lines.get(i);
 				lines.set(i, lines.get(i).replace("$dataName", "Kenneth/KJ"));
 				lines.set(i, lines.get(i).replace("$dataMon", "Feed"));
-				lines.set(i, lines.get(i).replace("dataTue", "Food"));
-				lines.set(i, lines.get(i).replace("dataWed", "Dairy"));
-				lines.set(i, lines.get(i).replace("dataThu", "Dairy"));
-				lines.set(i, lines.get(i).replace("dataFri", "Feed"));
-				lines.set(i, lines.get(i).replace("dataSat", ""));
-				lines.set(i, lines.get(i).replace("dataSun", ""));
+				lines.set(i, lines.get(i).replace("$dataTue", "Food"));
+				lines.set(i, lines.get(i).replace("$dataWed", "Dairy"));
+				lines.set(i, lines.get(i).replace("$dataThur", "Dairy"));
+				lines.set(i, lines.get(i).replace("$dataFri", "Feed"));
+				lines.set(i, lines.get(i).replace("$dataSat", ""));
+				lines.set(i, lines.get(i).replace("$dataSun", ""));
 				// add rows
-				lines.add(i + 1, tableDataRow);
 			default:
 				break;
 			}
 		}
 
+	}
+
+	public static void main(String[] args) {
+		saveToHTML();
 	}
 }
