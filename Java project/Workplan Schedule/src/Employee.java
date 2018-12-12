@@ -11,8 +11,8 @@ public class Employee extends Person {
 	private int counter;
 
 	/* Constructor */
-	public Employee(String name, String initials, int day, int month, int year) {
-		super(name, initials, day, month, year);
+	public Employee(String name, String initials) {
+		super(name, initials);
 		preferences = new ArrayList<>();
 		training = new ArrayList<>();
 		hidden = false;
