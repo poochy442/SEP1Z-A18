@@ -5,7 +5,7 @@ public class Person {
 	private String name, initials;
 
 	/* Constructor */
-	public Person(String name, String initials, int day, int month, int year) {
+	public Person(String name, String initials) {
 		this.name = name;
 		this.initials = initials;
 	}

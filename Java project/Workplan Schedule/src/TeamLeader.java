@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 public class TeamLeader extends Person {
 
@@ -7,17 +8,18 @@ public class TeamLeader extends Person {
 	private String teamName;
 
 	// constructor
-	public TeamLeader(String name, String initials, int day, int month, int year, String userName, String password) {
-		super(name, initials, day, month, year);
-
+	public TeamLeader(String name, String initials, String password) {
+		super(name, initials);
+		this.userName = initials;
+		this.password = password;
 	}
 
 	// Methods
-	public String execute() {
-		if (this.userName.equals("admin") && this.password.equals("admin123")) {
-			return "success";
+	public Boolean login(String userName, String password) {
+		if (this.userName.equals(userName) && this.password.equals(password)) {
+			return true;
 		} else {
-			return "error";
+			return false;
 		}
 	}
 
@@ -25,17 +27,16 @@ public class TeamLeader extends Person {
 	public String getUserName() {
 		return userName;
 	}
-
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
-
 	public String getPassword() {
 		return password;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setPassword(String currPassword, String newPassword) throws Exception {
+		if(currPassword.equals(this.password)) {
+			this.password = newPassword;
+		} else {
+			throw new Exception("Wrong password!");
+		}
 	}
 
 	public String getTeamName() {
@@ -46,9 +47,27 @@ public class TeamLeader extends Person {
 		this.teamName = teamName;
 	}
 
-	/*
-	 * public static void main(String[] args) { TeamLeader Teako = new
-	 * TeamLeader("Teakosheen", "TK", 1, 7, 1983); Teako.setPassword("123");
-	 * System.out.println(Teako.getPassword()); }
-	 */
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		
+		System.out.println("What would you like your password to be?");
+		String password = input.nextLine();
+		
+		TeamLeader user = new TeamLeader("Kenneth", "KJ", password);
+		
+		System.out.println("Now, login:\n" + "Username?");
+		String uInput = input.nextLine();
+		
+		System.out.println("Password?");
+		String pInput = input.nextLine();
+		
+		if(user.login(uInput, pInput)) {
+			System.out.println("Succes");
+		} else {
+			System.out.println("You failed!");
+		}
+		
+		input.close();
+	}
+
 }

@@ -133,8 +133,9 @@ public class HTMLGenerator {
 		}
 
 	}
-
+/*
 	public static void main(String[] args) {
 		saveToHTML();
 	}
+	*/
 }

@@ -2,52 +2,70 @@ import java.util.*;
 
 public class EmployeeList {
 
-	int count;
-	private Person[] employees;
-	private int numberofemployees;
-
-	public EmployeeList(int maxNoEmp, int numberofemployees) {
-		this.employees = new Person[maxNoEmp];
-		this.numberofemployees = numberofemployees;
+List<Employee> employeeList;
+	
+	public EmployeeList() {
+		employeeList = new ArrayList<>();
 	}
-
+	
 	public int size() {
-		return numberofemployees;
+		return employeeList.size();
 	}
-
-	public void addPerson(Person person) {
-		addPerson(numberofemployees, person);
+	
+	public void add(Employee person) {
+		employeeList.add(person);
 	}
-
-	public void addPerson(int index, Person person) {
-		if (numberofemployees < employees.length) {
-			for (int i = numberofemployees - 1; i >= index; i--) {
-				employees[i + 1] = employees[i];
+	
+	public void remove(int index) {
+		employeeList.remove(index);
+	}
+	
+	public void removePerson(Employee person) {
+		for(int i = 0; i < employeeList.size(); i++) {
+			if(employeeList.get(i).equals(person)) {
+				employeeList.remove(i);
 			}
-			employees[index] = person;
-			numberofemployees++;
 		}
 	}
-
-	public void removePerson(int index) {
-		for (int i = index; i < numberofemployees - 1; i++) {
-			employees[i] = employees[i + 1];
+	
+	public void hidePerson(Employee person) {
+		for(Employee e : employeeList) {
+			if(e.equals(person)) {
+				e.setHiddenStatus(true);
+			}
 		}
-		numberofemployees--;
 	}
-
+	
+	public void hidePerson(int index) {
+		employeeList.get(index).setHiddenStatus(true);
+	}
+	
+	public void showPerson(Employee person) {
+		for(Employee e : employeeList) {
+			if(e.equals(person) && e.getHiddenStatus() == true) {
+				e.setHiddenStatus(false);
+			}
+		}
+	}
+	
+	public void showPerson(int index) {
+		employeeList.get(index).setHiddenStatus(false);
+	}
+	
 	public Person getPerson(int index) {
-		return employees[index];
+		return employeeList.get(index);
 	}
-
+	
 	public String toString() {
 		String s = "";
-		for (int i = 0; i < numberofemployees; i++) {
-			s += employees[i];
-			if (i < numberofemployees - 1) {
+		for(int i = 0; i < employeeList.size(); i++) {
+			s += employeeList.get(i);
+			if(i < employeeList.size() - 1) {
 				s += "\n";
 			}
 		}
+		
 		return s;
 	}
+
 }
