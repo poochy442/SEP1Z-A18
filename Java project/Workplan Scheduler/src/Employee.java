@@ -4,20 +4,22 @@ import java.util.ArrayList;
 
 public class Employee extends Person {
 
-	// Fields
+	/* Fields */
 	private List<SimpleEntry<String, Integer>> preferences;
 	private List<SimpleEntry<String, Integer>> training;
+	private Boolean hidden;
 	private int counter;
 
-	// Constructor
+	/* Constructor */
 	public Employee(String name, String initials, int day, int month, int year) {
 		super(name, initials, day, month, year);
 		preferences = new ArrayList<>();
 		training = new ArrayList<>();
+		hidden = false;
 		counter = 0;
 	}
 
-	// Methods
+	/* Methods */
 	// Getters and Setters
 	public List<SimpleEntry<String, Integer>> getPreferences() {
 		return preferences;
@@ -29,16 +31,6 @@ public class Employee extends Person {
 
 	public void addPreference(String test, int preference) {
 		preferences.add(new SimpleEntry<String, Integer>(test, preference));
-	}
-
-	public int checkForPreference(String test) {
-		for (int i = 0; i < preferences.size(); i++) {
-			if (preferences.get(i).getKey().equals(test)) {
-				return preferences.get(i).getValue();
-			}
-			counter++;
-		}
-		return 0;
 	}
 	
 	public List<SimpleEntry<String, Integer>> getTraining(){
@@ -53,6 +45,26 @@ public class Employee extends Person {
 		training.add(new SimpleEntry<String, Integer>(test, level));
 	}
 	
+	public Boolean getHiddenStatus() {
+		return hidden;
+	}
+	
+	public void setHiddenStatus(Boolean status) {
+		hidden = status;
+	}
+
+	// Method to check for specific preference
+	public int checkForPreference(String test) {
+		for (int i = 0; i < preferences.size(); i++) {
+			if (preferences.get(i).getKey().equals(test)) {
+				return preferences.get(i).getValue();
+			}
+			counter++;
+		}
+		return 0;
+	}
+	
+	// Method to check for specific training
 	public int checkForTraining(String test) {
 		for(SimpleEntry<String, Integer> entry : training) {
 			if(entry.getKey().equals(test)) {
@@ -61,5 +73,10 @@ public class Employee extends Person {
 			counter++;
 		}
 		return -1;
+	}
+	
+	// Debug method
+	public Integer getCounter() {
+		return counter;
 	}
 }
