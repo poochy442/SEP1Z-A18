@@ -6,12 +6,12 @@ public class Assignment {
 	private Boolean vacation;
 	
 	public Assignment(Date date) {
-		this.date = date;
+		this.date = date.copy();
 		vacation = false;
 	}
 	
 	public Assignment(Date date, String test) {
-		this.date = date;
+		this.date = date.copy();
 		this.test = test;
 		vacation = false;
 	}
@@ -24,14 +24,15 @@ public class Assignment {
 		return test;
 	}
 	
-	public Boolean getVacation() {
-		return vacation;
-	}
-	
 	public void setVacation() {
 		vacation = true;
 	}
 	
+	public Boolean getVacation() {
+		return vacation;
+	}
+	
+	@Override
 	public String toString() {
 		String s = "";
 		s += "Date: " + date + "\n" + "Test: " + test;
