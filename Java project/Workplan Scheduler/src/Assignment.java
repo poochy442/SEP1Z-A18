@@ -24,6 +24,14 @@ public class Assignment {
 		return test;
 	}
 	
+	public void setDate(Date date) {
+		this.date = date.copy();
+	}
+	
+	public Date getDate() {
+		return date.copy();
+	}
+	
 	public void setVacation() {
 		vacation = true;
 	}
@@ -32,7 +40,6 @@ public class Assignment {
 		return vacation;
 	}
 	
-	@Override
 	public String toString() {
 		String s = "";
 		s += "Date: " + date + "\n" + "Test: " + test;

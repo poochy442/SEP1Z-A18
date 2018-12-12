@@ -30,7 +30,7 @@ public class Person {
 
 	public String toString() {
 		String s = "";
-		s += "Name: " + name + "/" + initials;
+		s += name + "/" + initials;
 		return s;
 	}
 

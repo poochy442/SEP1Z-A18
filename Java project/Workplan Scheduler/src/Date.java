@@ -6,7 +6,7 @@ public class Date {
 	private static String[] monthNames = { "January", "February", "March", "April", "May", "June", "July", "August",
 			"September", "October", "November", "December" };
 
-	/* Construcor */
+	/* Constructor */
 	public Date(int day, int month, int year) {
 		this.day = day;
 		this.month = month;
@@ -116,6 +116,17 @@ public class Date {
 		String s = "";
 		s += String.format("%dth of %s, %d", day, getMonthName(), year);
 		return s;
+	}
+	
+	// Equals method
+	public boolean equals(Object obj) {
+		if(!(obj instanceof Date)) {
+			return false;
+		}
+		Date other = (Date) obj;
+		return day == other.day
+				&& month == other.month
+				&& year == other.year;
 	}
 	
 }
