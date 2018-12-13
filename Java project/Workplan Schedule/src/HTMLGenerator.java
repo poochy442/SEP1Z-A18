@@ -4,10 +4,8 @@ import java.util.*;
 
 public class HTMLGenerator {
 
-	// Fields
-
 	// Methods
-	public static void saveToHTML() {
+	public static void saveToHTML(Schedule schedule) {
 		List<String> emptyTable = new ArrayList<String>();
 		List<String> lines = new ArrayList<String>();
 
@@ -48,20 +46,10 @@ public class HTMLGenerator {
 			}
 		}
 
-		checkArray(lines, new Date(17, 12, 2018));
+		checkArray(lines, schedule.getStartDate(), schedule);
 
 		divEnd = 0;
-
-		// Insert div
-		/*
-		 * for (int i = 0; i < lines.size(); i++) { if
-		 * (lines.get(i).matches("(.*)End Point(.*)")) { divEnd = i; }
-		 * 
-		 * if (divEnd != 0) { for (int j = 0; j < emptyTable.size(); j++) {
-		 * lines.add(divEnd + 1 + j, emptyTable.get(j)); } break; } }
-		 */
-		// TODO: CheckArray call
-
+		
 		for (int i = 0; i < lines.size(); i++) {
 			out.println(lines.get(i));
 			out.flush();
@@ -77,9 +65,13 @@ public class HTMLGenerator {
 		}
 	}
 
-	public static void checkArray(List<String> lines, Date startDate) {
+	public static void checkArray(List<String> lines, Date startDate, Schedule schedule) {
 		int rowAdded = 0;
 		String tableDataRow = null;
+		List<Person> people = new ArrayList<>();
+		for(Person p : schedule.getAssignments().keySet()) {
+			people.add(p);
+		}
 		for (int i = 0; i < lines.size(); i++) {
 			int dollarFound = lines.get(i).indexOf("$");
 			String line = "$";
@@ -118,24 +110,22 @@ public class HTMLGenerator {
 				break;
 			case "$dataName":
 				tableDataRow = lines.get(i);
-				lines.set(i, lines.get(i).replace("$dataName", "Kenneth/KJ"));
-				lines.set(i, lines.get(i).replace("$dataMon", "Feed"));
-				lines.set(i, lines.get(i).replace("$dataTue", "Food"));
-				lines.set(i, lines.get(i).replace("$dataWed", "Dairy"));
-				lines.set(i, lines.get(i).replace("$dataThur", "Dairy"));
-				lines.set(i, lines.get(i).replace("$dataFri", "Feed"));
-				lines.set(i, lines.get(i).replace("$dataSat", ""));
-				lines.set(i, lines.get(i).replace("$dataSun", ""));
-				// add rows
+				lines.set(i, lines.get(i).replace("$dataName", people.get(rowAdded).toString()));
+				lines.set(i, lines.get(i).replace("$dataMon", schedule.getAssignments().get(people.get(rowAdded)).get(0).getTest()));
+				lines.set(i, lines.get(i).replace("$dataTue", schedule.getAssignments().get(people.get(rowAdded)).get(1).getTest()));
+				lines.set(i, lines.get(i).replace("$dataWed", schedule.getAssignments().get(people.get(rowAdded)).get(2).getTest()));
+				lines.set(i, lines.get(i).replace("$dataThur", schedule.getAssignments().get(people.get(rowAdded)).get(3).getTest()));
+				lines.set(i, lines.get(i).replace("$dataFri", schedule.getAssignments().get(people.get(rowAdded)).get(4).getTest()));
+				lines.set(i, lines.get(i).replace("$dataSat", schedule.getAssignments().get(people.get(rowAdded)).get(5).getTest()));
+				lines.set(i, lines.get(i).replace("$dataSun", schedule.getAssignments().get(people.get(rowAdded)).get(6).getTest()));
+				if(rowAdded < people.size() - 1) {
+					lines.add(i + 1, tableDataRow);
+					rowAdded++;
+				}
 			default:
 				break;
 			}
 		}
 
 	}
-/*
-	public static void main(String[] args) {
-		saveToHTML();
-	}
-	*/
 }
