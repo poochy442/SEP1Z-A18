@@ -45,6 +45,11 @@
                   <Image url="@../eurofins_WHITE.jpg" />
                </image>
             </ImageView>
+            <ImageView fitHeight="162.0" fitWidth="291.0" layoutX="211.0" layoutY="300.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../chemistry.gif" />
+               </image>
+            </ImageView>
       </children>
     </AnchorPane>
   </children>
