@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+  <children>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+      <children>
+            <SplitPane prefHeight="375.0" prefWidth="640.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                     <children>
+                        <Label layoutX="380.0" layoutY="25.0" prefHeight="27.0" prefWidth="221.0" text="Set Vacations or Sick Days">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="331.0" layoutY="193.0" text="Name">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="337.0" layoutY="165.0" text="Type">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="334.0" layoutY="235.0" text="Start date">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <DatePicker layoutX="414.0" layoutY="230.0" />
+                        <DatePicker layoutX="415.0" layoutY="269.0" />
+                        <JFXButton layoutX="362.0" layoutY="360.0" text="Save">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton layoutX="456.0" layoutY="361.0" text="Return to main menu">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </JFXButton>
+                        <MenuButton layoutX="447.0" layoutY="162.0" mnemonicParsing="false" text="Type">
+                          <items>
+                              <MenuItem mnemonicParsing="false" text="Vacation" />
+                              <MenuItem mnemonicParsing="false" text="Sick day" />
+                          </items>
+                        </MenuButton>
+                        <MenuButton layoutX="447.0" layoutY="191.0" mnemonicParsing="false" text="Employees">
+                           <items>
+                              <MenuItem mnemonicParsing="false" text="Employee 1" />
+                           </items>
+                        </MenuButton>
+                        <ButtonBar layoutX="48.0" layoutY="514.0" prefHeight="40.0" prefWidth="200.0" />
+                        <Label layoutX="334.0" layoutY="271.0" text="End date">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children></AnchorPane>
+              </items>
+            </SplitPane>
+      </children>
+    </AnchorPane>
+  </children>
+</VBox>
