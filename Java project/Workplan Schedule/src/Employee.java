@@ -75,6 +75,10 @@ public class Employee extends Person {
 		return -1;
 	}
 	
+	public String toString() {
+		return super.toString();
+	}
+	
 	// Debug method
 	public Integer getCounter() {
 		return counter;

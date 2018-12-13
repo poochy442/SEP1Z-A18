@@ -47,27 +47,4 @@ public class TeamLeader extends Person {
 		this.teamName = teamName;
 	}
 
-	public static void main(String[] args) {
-		Scanner input = new Scanner(System.in);
-		
-		System.out.println("What would you like your password to be?");
-		String password = input.nextLine();
-		
-		TeamLeader user = new TeamLeader("Kenneth", "KJ", password);
-		
-		System.out.println("Now, login:\n" + "Username?");
-		String uInput = input.nextLine();
-		
-		System.out.println("Password?");
-		String pInput = input.nextLine();
-		
-		if(user.login(uInput, pInput)) {
-			System.out.println("Succes");
-		} else {
-			System.out.println("You failed!");
-		}
-		
-		input.close();
-	}
-
 }

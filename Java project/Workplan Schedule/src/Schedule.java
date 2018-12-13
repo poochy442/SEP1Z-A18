@@ -5,10 +5,13 @@ public class Schedule {
 	// Fields
 	private Map<Person, List<Assignment>> assignments;
 	private int counter;
+	Date startDate, endDate;
 	
 	// Constructor
-	public Schedule() {
+	public Schedule(Date startDate, Date endDate) {
 		assignments = new HashMap<Person, List<Assignment>>();
+		this.startDate = startDate;
+		this.endDate = endDate;
 		counter = 0;
 	}
 	
@@ -56,6 +59,14 @@ public class Schedule {
 		}		
 		
 		return returnMap;
+	}
+	
+	public Date getStartDate() {
+		return startDate.copy();
+	}
+	
+	public Date getEndDate() {
+		return endDate.copy();
 	}
 	
 	// DEBUG: returns the counter
