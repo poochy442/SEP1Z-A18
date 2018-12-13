@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" text="New Employee" />
+            <MenuItem mnemonicParsing="false" text="Manage  Employees" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Add Assignment" />
+            <MenuItem mnemonicParsing="false" text="Change Assignmet" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Save">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Save changes" />
+            <MenuItem mnemonicParsing="false" text="Save to HTML" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Help page" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+      <children>
+            <SplitPane prefHeight="375.0" prefWidth="640.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                     <children>
+                        <Label layoutX="63.0" layoutY="68.0" text="Name:">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                        </Label>
+                        <ButtonBar layoutX="122.0" layoutY="285.0" prefHeight="40.0" prefWidth="200.0" />
+                        <Button layoutX="430.0" layoutY="313.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="98.0" text="CANCEL" />
+                        <Label layoutX="180.0" layoutY="14.0" text="Modify Employee.">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="63.0" layoutY="121.0" text="Initials:">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="63.0" layoutY="174.0" text="E-Mail:">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                        </Label>
+                        <Button layoutX="305.0" layoutY="313.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="96.0" text="SAVE" />
+                        <TextField layoutX="237.0" layoutY="82.0" prefHeight="32.0" prefWidth="291.0" />
+                        <TextField layoutX="237.0" layoutY="132.0" prefHeight="32.0" prefWidth="291.0" />
+                        <TextField layoutX="237.0" layoutY="185.0" prefHeight="32.0" prefWidth="291.0" />
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
+      </children>
+    </AnchorPane>
+      <ScrollPane hbarPolicy="NEVER" prefHeight="200.0" prefWidth="200.0">
+        <content>
+          <AnchorPane prefHeight="65.0" prefWidth="584.0">
+               <children>
+                  <TableView prefHeight="200.0" prefWidth="200.0">
+                    <columns>
+                      <TableColumn prefWidth="75.0" text="C1" />
+                      <TableColumn prefWidth="75.0" text="C2" />
+                    </columns>
+                  </TableView>
+                  <TableView prefHeight="200.0" prefWidth="200.0">
+                    <columns>
+                      <TableColumn prefWidth="75.0" text="C1" />
+                      <TableColumn prefWidth="75.0" text="C2" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+  </children>
+</VBox>
