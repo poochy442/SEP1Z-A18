@@ -1,32 +1,84 @@
+import java.util.List;
+import java.util.AbstractMap.SimpleEntry;
 
+public class Model 
+{
 
-public class Tester {
-	
-	public static void main(String[] args) {
-		
-		Schedule schedule = new Schedule(new Date(17, 12, 2018), new Date(23, 12, 2018));
-		
-		Employee jimmi = new Employee("John", "BD");
-		Employee kenneth = new Employee("Kenneth", "KJ");
-		Employee teako = new Employee("Teakosheen", "TK");
-		Employee florin = new Employee("Florin", "FB");
-		
-		String[] tests = {"Feed", "Food", "Dairy", "Protein"};
-		
-		for(int i = 0; i < 7; i++) {
-			Assignment a1 = new Assignment(new Date(17 + i, 12, 2018), tests[(int) (Math.random() * 3)]);
-			Assignment a2 = new Assignment(new Date(17 + i, 12, 2018), tests[(int) (Math.random() * 3)]);
-			Assignment a3 = new Assignment(new Date(17 + i, 12, 2018), tests[(int) (Math.random() * 3)]);
-			Assignment a4 = new Assignment(new Date(17 + i, 12, 2018), tests[(int) (Math.random() * 3)]);
-			
-			schedule.addAssignment(a1, jimmi);
-			schedule.addAssignment(a2, kenneth);
-			schedule.addAssignment(a3, teako);
-			schedule.addAssignment(a4, florin);
-		}
-		
-		HTMLGenerator.saveToHTML(schedule);
-		
-	}
-	
+   //Date
+   
+   public void setDate(int day, int month, int year)
+   public int getDate();
+   public int getMonth();
+   public int getYear();
+   public boolean isLeapYear(int year);
+   public int numberOfDaysInMonth();
+   public String getMonthName();
+   public void nextDay();
+   public void nextDays(int days);
+   public Date copy();
+   public String toString();
+   public String toFormalString();
+   public boolean equals(Object obj);
+   public boolean isBetween(Date lowerBound, Date upperBound);
+   
+   //Employee
+   
+   public void setPreferences(List<SimpleEntry<String, Integer>> preferences);
+   public void addPreference(String test, int preference);
+   public List<SimpleEntry<String, Integer>> getTraining();
+   public void setTraining(List<SimpleEntry<String, Integer>> training);
+   public void addTraining(String test, int level);
+   public Boolean getHiddenStatus();
+   public void setHiddenStatus(Boolean status);
+   public int checkForPreference(String test);
+   public int checkForTraining(String test);
+   
+   //EmployeeList
+   
+   public int size();
+   public void add(Employee person);
+   employeeList.remove(index);
+   public void removePerson(Employee person);
+   public void hidePerson(Employee person);
+   public void hidePerson(int index);
+   public void showPerson(Employee person);
+   public void showPerson(int index);
+   public Person getPerson(int index);
+   
+   //Person
+   
+   public String getName();
+   public void setName(String name);
+   public String getInitials();
+   public void setInitials(String initials);
+   
+   //Schedule 
+   
+   public Map<Person, List<Assignment>> getAssignments();
+   public void setAssignments(Map<Person, List<Assignment>> assignments);
+   public void addAssignment(Assignment assignment, Person employee);
+   public Map<Person, Map<Boolean, List<Assignment>>> sortAssignments();
+   public Date getStartDate();
+   public Date getEndDate();
+   
+   //TeamLeader
+   
+   public Boolean login(String userName, String password);
+   public String getUserName();
+   public String getPassword();
+   public void setPassword(String currPassword, String newPassword);
+   public String getTeamName();
+   public void setTeamName(String teamName);
+   
+   //Assignment
+   
+   public void setTest(String test);
+   public String getTest();
+   public void setDate(Date date);
+   public Date getDate();
+   public void setVacation();
+   public Boolean getVacation();
+   
+   
+   
 }
