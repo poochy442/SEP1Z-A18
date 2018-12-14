@@ -6,7 +6,7 @@ public class Date {
 	private static String[] monthNames = { "January", "February", "March", "April", "May", "June", "July", "August",
 			"September", "October", "November", "December" };
 
-	/* Construcor */
+	/* Constructor */
 	public Date(int day, int month, int year) {
 		this.day = day;
 		this.month = month;
@@ -116,6 +116,49 @@ public class Date {
 		String s = "";
 		s += String.format("%dth of %s, %d", day, getMonthName(), year);
 		return s;
+	}
+	
+	// Equals method
+	public boolean equals(Object obj) {
+		if(!(obj instanceof Date)) {
+			return false;
+		}
+		Date other = (Date) obj;
+		return day == other.day
+				&& month == other.month
+				&& year == other.year;
+	}
+	
+	public boolean isBetween(Date lowerBound, Date upperBound) {
+		if(lowerBound.equals(upperBound)) {
+			if(this.equals(lowerBound)) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+		
+		if(lowerBound.getYear() == lowerBound.getYear()) {
+			if(lowerBound.getMonth() == upperBound.getMonth()) {
+				return this.day > lowerBound.getDay() && this.day < upperBound.getDay();
+			} else {
+				if(this.month == lowerBound.getMonth()) {
+					return this.day > lowerBound.day;
+				} else if(this.month == upperBound.getMonth()) {
+					return this.day < upperBound.getDay();
+				} else {
+					return false;
+				}
+			}
+		} else {
+			if(this.getYear() == lowerBound.getYear() && this.getMonth() == lowerBound.getMonth()) {
+				return this.getDay() > lowerBound.getDay();
+			} else if(this.getYear() == upperBound.getYear() && this.getMonth() == upperBound.getMonth()) {
+				return this.day < upperBound.getDay();
+			} else {
+				return false;
+			}
+		}
 	}
 	
 }
