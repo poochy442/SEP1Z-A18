@@ -1,52 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.gluonhq.charm.glisten.control.TextField?>
-<?import javafx.scene.control.Button?>
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
-      <children>
-            <SplitPane prefHeight="375.0" prefWidth="640.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-              <items>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
-                     <children>
-                        <Button layoutX="199.0" layoutY="311.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="61.0" text="Save">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Button>
-                        <Button layoutX="354.0" layoutY="311.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="61.0" text="Cancel" textAlignment="CENTER">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Button>
-                        <Label layoutX="120.0" layoutY="24.0" prefHeight="21.0" prefWidth="329.0" text="             Manage Employee - Hide" textAlignment="CENTER">
-                           <font>
-                              <Font name="System Bold" size="18.0" />
-                           </font>
-                        </Label>
-                        <Text fill="RED" layoutX="168.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="This action will hide the employee :">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Text>
-                        <TextField layoutX="206.0" layoutY="168.0" />
-                        <Text layoutX="257.0" layoutY="242.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Are you sure?">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Text>
-                     </children></AnchorPane>
-              </items>
-            </SplitPane>
-      </children>
+         <children>
+            <Label layoutX="274.0" layoutY="43.0" prefHeight="27.0" prefWidth="369.0" text="             Manage Employee - Hide">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <JFXButton layoutX="464.0" layoutY="539.0" style="-fx-border-color: black;" text="Cancel" />
+            <Label layoutX="279.0" layoutY="186.0" text="Please confirm the action of hiding the profile of employee:">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <JFXButton layoutX="365.0" layoutY="539.0" style="-fx-border-color: black;" text="Yes" />
+            <Text layoutX="397.0" layoutY="251.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="122.13671875" />
+         </children>
     </AnchorPane>
   </children>
 </VBox>
