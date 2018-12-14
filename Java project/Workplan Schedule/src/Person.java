@@ -2,10 +2,10 @@
 public class Person {
 
 	/* Fields */
-	private String name, initials;
+	private String name, initials, email;
 
 	/* Constructor */
-	public Person(String name, String initials) {
+	public Person(String name, String initials, String email) {
 		this.name = name;
 		this.initials = initials;
 	}
@@ -26,6 +26,14 @@ public class Person {
 
 	public void setInitials(String initials) {
 		this.initials = initials;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public String toString() {

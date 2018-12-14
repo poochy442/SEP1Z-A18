@@ -11,8 +11,8 @@ public class Employee extends Person {
 	private int counter;
 
 	/* Constructor */
-	public Employee(String name, String initials) {
-		super(name, initials);
+	public Employee(String name, String initials, String email) {
+		super(name, initials, email);
 		preferences = new ArrayList<>();
 		training = new ArrayList<>();
 		hidden = false;
@@ -32,23 +32,23 @@ public class Employee extends Person {
 	public void addPreference(String test, int preference) {
 		preferences.add(new SimpleEntry<String, Integer>(test, preference));
 	}
-	
-	public List<SimpleEntry<String, Integer>> getTraining(){
+
+	public List<SimpleEntry<String, Integer>> getTraining() {
 		return training;
 	}
-	
+
 	public void setTraining(List<SimpleEntry<String, Integer>> training) {
 		this.training = training;
 	}
-	
+
 	public void addTraining(String test, int level) {
 		training.add(new SimpleEntry<String, Integer>(test, level));
 	}
-	
+
 	public Boolean getHiddenStatus() {
 		return hidden;
 	}
-	
+
 	public void setHiddenStatus(Boolean status) {
 		hidden = status;
 	}
@@ -63,22 +63,22 @@ public class Employee extends Person {
 		}
 		return 0;
 	}
-	
+
 	// Method to check for specific training
 	public int checkForTraining(String test) {
-		for(SimpleEntry<String, Integer> entry : training) {
-			if(entry.getKey().equals(test)) {
+		for (SimpleEntry<String, Integer> entry : training) {
+			if (entry.getKey().equals(test)) {
 				return entry.getValue();
 			}
 			counter++;
 		}
 		return -1;
 	}
-	
+
 	public String toString() {
 		return super.toString();
 	}
-	
+
 	// Debug method
 	public Integer getCounter() {
 		return counter;

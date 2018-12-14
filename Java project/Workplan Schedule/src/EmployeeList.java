@@ -2,12 +2,15 @@ import java.util.*;
 
 public class EmployeeList {
 
-	List<Employee> employeeList;
+	/* Fields */
+	private List<Employee> employeeList;
 
+	/* Constructor */
 	public EmployeeList() {
 		employeeList = new ArrayList<>();
 	}
 
+	/* Methods */
 	public int size() {
 		return employeeList.size();
 	}

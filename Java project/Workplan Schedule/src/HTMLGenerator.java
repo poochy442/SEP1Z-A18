@@ -49,7 +49,7 @@ public class HTMLGenerator {
 		checkArray(lines, schedule.getStartDate(), schedule);
 
 		divEnd = 0;
-		
+
 		for (int i = 0; i < lines.size(); i++) {
 			out.println(lines.get(i));
 			out.flush();
@@ -69,7 +69,7 @@ public class HTMLGenerator {
 		int rowAdded = 0;
 		String tableDataRow = null;
 		List<Person> people = new ArrayList<>();
-		for(Person p : schedule.getAssignments().keySet()) {
+		for (Person p : schedule.getAssignments().keySet()) {
 			people.add(p);
 		}
 		for (int i = 0; i < lines.size(); i++) {
@@ -111,14 +111,21 @@ public class HTMLGenerator {
 			case "$dataName":
 				tableDataRow = lines.get(i);
 				lines.set(i, lines.get(i).replace("$dataName", people.get(rowAdded).toString()));
-				lines.set(i, lines.get(i).replace("$dataMon", schedule.getAssignments().get(people.get(rowAdded)).get(0).getTest()));
-				lines.set(i, lines.get(i).replace("$dataTue", schedule.getAssignments().get(people.get(rowAdded)).get(1).getTest()));
-				lines.set(i, lines.get(i).replace("$dataWed", schedule.getAssignments().get(people.get(rowAdded)).get(2).getTest()));
-				lines.set(i, lines.get(i).replace("$dataThur", schedule.getAssignments().get(people.get(rowAdded)).get(3).getTest()));
-				lines.set(i, lines.get(i).replace("$dataFri", schedule.getAssignments().get(people.get(rowAdded)).get(4).getTest()));
-				lines.set(i, lines.get(i).replace("$dataSat", schedule.getAssignments().get(people.get(rowAdded)).get(5).getTest()));
-				lines.set(i, lines.get(i).replace("$dataSun", schedule.getAssignments().get(people.get(rowAdded)).get(6).getTest()));
-				if(rowAdded < people.size() - 1) {
+				lines.set(i, lines.get(i).replace("$dataMon",
+						schedule.getAssignments().get(people.get(rowAdded)).get(0).getTest()));
+				lines.set(i, lines.get(i).replace("$dataTue",
+						schedule.getAssignments().get(people.get(rowAdded)).get(1).getTest()));
+				lines.set(i, lines.get(i).replace("$dataWed",
+						schedule.getAssignments().get(people.get(rowAdded)).get(2).getTest()));
+				lines.set(i, lines.get(i).replace("$dataThur",
+						schedule.getAssignments().get(people.get(rowAdded)).get(3).getTest()));
+				lines.set(i, lines.get(i).replace("$dataFri",
+						schedule.getAssignments().get(people.get(rowAdded)).get(4).getTest()));
+				lines.set(i, lines.get(i).replace("$dataSat",
+						schedule.getAssignments().get(people.get(rowAdded)).get(5).getTest()));
+				lines.set(i, lines.get(i).replace("$dataSun",
+						schedule.getAssignments().get(people.get(rowAdded)).get(6).getTest()));
+				if (rowAdded < people.size() - 1) {
 					lines.add(i + 1, tableDataRow);
 					rowAdded++;
 				}

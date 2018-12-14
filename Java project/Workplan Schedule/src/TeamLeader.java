@@ -8,8 +8,8 @@ public class TeamLeader extends Person {
 	private String teamName;
 
 	// constructor
-	public TeamLeader(String name, String initials, String password) {
-		super(name, initials);
+	public TeamLeader(String name, String initials, String email, String password) {
+		super(name, initials, email);
 		this.userName = initials;
 		this.password = password;
 	}
@@ -27,12 +27,13 @@ public class TeamLeader extends Person {
 	public String getUserName() {
 		return userName;
 	}
+
 	public String getPassword() {
 		return password;
 	}
 
 	public void setPassword(String currPassword, String newPassword) throws Exception {
-		if(currPassword.equals(this.password)) {
+		if (currPassword.equals(this.password)) {
 			this.password = newPassword;
 		} else {
 			throw new Exception("Wrong password!");
