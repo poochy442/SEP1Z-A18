@@ -42,12 +42,12 @@
             </AnchorPane>
             <ImageView fitHeight="189.0" fitWidth="355.0" layoutX="185.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../eurofins_WHITE.jpg" />
+                  <Image url="@eurofins_WHITE.jpg" />
                </image>
             </ImageView>
             <ImageView fitHeight="162.0" fitWidth="291.0" layoutX="211.0" layoutY="300.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../chemistry.gif" />
+                  <Image url="@chemistry.gif" />
                </image>
             </ImageView>
       </children>

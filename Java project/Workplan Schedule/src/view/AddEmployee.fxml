@@ -4,6 +4,7 @@
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -50,14 +51,21 @@
             </TableView>
             <RadioButton layoutX="549.0" layoutY="141.0" mnemonicParsing="false" text="High Preference" />
             <RadioButton layoutX="656.0" layoutY="141.0" mnemonicParsing="false" text="Low preference" />
-            <RadioButton layoutX="761.0" layoutY="141.0" mnemonicParsing="false" text="No training" />
+            <RadioButton layoutX="773.0" layoutY="141.0" mnemonicParsing="false" text="No training" />
             <RadioButton layoutX="549.0" layoutY="206.0" mnemonicParsing="false" text="High Preference" />
             <RadioButton layoutX="656.0" layoutY="206.0" mnemonicParsing="false" text="Low preference" />
-            <RadioButton layoutX="761.0" layoutY="206.0" mnemonicParsing="false" text="No training" />
+            <RadioButton layoutX="773.0" layoutY="206.0" mnemonicParsing="false" text="No training" />
             <RadioButton layoutX="549.0" layoutY="174.0" mnemonicParsing="false" text="High Preference" />
             <RadioButton layoutX="656.0" layoutY="174.0" mnemonicParsing="false" text="Low preference" />
-            <RadioButton layoutX="761.0" layoutY="174.0" mnemonicParsing="false" text="No training" />
+            <RadioButton layoutX="773.0" layoutY="174.0" mnemonicParsing="false" text="No training" />
             <JFXButton layoutX="437.0" layoutY="539.0" style="-fx-border-color: black;" text="Save" />
+            <RadioButton layoutX="855.0" layoutY="140.0" mnemonicParsing="false" text="Under training" />
+            <RadioButton layoutX="855.0" layoutY="173.0" mnemonicParsing="false" text="Under training" />
+            <RadioButton layoutX="855.0" layoutY="208.0" mnemonicParsing="false" text="Under training" />
+            <Separator layoutX="770.0" layoutY="137.0" orientation="VERTICAL" prefHeight="200.0" />
+            <Separator layoutX="553.0" layoutY="135.0" prefHeight="2.0" prefWidth="409.0" />
+            <Label layoutX="649.0" layoutY="115.0" text="Trained" />
+            <Label layoutX="855.0" layoutY="115.0" text="Not trained" />
          </children>
     </AnchorPane>
   </children>
