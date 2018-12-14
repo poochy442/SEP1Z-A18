@@ -25,6 +25,34 @@ public class Schedule {
 		this.assignments = assignments;
 	}
 	
+	public Integer getEmployeesOnTest(String test) {
+		int returnInt = 0;
+		
+		for(Person p : assignments.keySet()) {
+			for(Assignment a : assignments.get(p)) {
+				if(a.getTest().equals(test)) {
+					returnInt++;
+				}
+			}
+		}
+		
+		return returnInt;
+	}
+	
+	public Map<String, Integer> getTestsAssigned(){
+		Map<String, Integer> returnMap = new HashMap<>();
+		for(Person p : assignments.keySet()) {
+			for(Assignment a : assignments.get(p)) {
+				if(returnMap.containsKey(a.getTest())) {
+					returnMap.put(a.getTest(), returnMap.get(a.getTest()) + 1);
+				} else {
+					returnMap.put(a.getTest(), 1);
+				}
+			}
+		}
+		return returnMap;
+	}
+	
 	// This adds an assignment to the list of assignments
 	public void addAssignment(Assignment assignment, Person employee) {
 		if(assignments.containsKey(employee)) {
