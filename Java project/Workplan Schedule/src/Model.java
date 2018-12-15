@@ -1,12 +1,12 @@
-import java.util.List;
+import java.util.*;
 import java.util.AbstractMap.SimpleEntry;
 
-public class Model 
+public interface Model 
 {
 
    //Date
    
-   public void setDate(int day, int month, int year)
+   public void setDate(int day, int month, int year);
    public int getDate();
    public int getMonth();
    public int getYear();
@@ -37,7 +37,7 @@ public class Model
    
    public int size();
    public void add(Employee person);
-   employeeList.remove(index);
+   public void remove(int index);
    public void removePerson(Employee person);
    public void hidePerson(Employee person);
    public void hidePerson(int index);
@@ -75,7 +75,7 @@ public class Model
    public void setTest(String test);
    public String getTest();
    public void setDate(Date date);
-   public Date getDate();
+   public Date getAssDate();
    public void setVacation();
    public Boolean getVacation();
    
