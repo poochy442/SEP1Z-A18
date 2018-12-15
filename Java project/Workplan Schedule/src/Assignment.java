@@ -1,5 +1,6 @@
+import java.io.Serializable;
 
-public class Assignment {
+public class Assignment implements Serializable {
 
 	private Date date;
 	private String test;

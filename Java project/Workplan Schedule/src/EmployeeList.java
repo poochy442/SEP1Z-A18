@@ -1,6 +1,7 @@
+import java.io.Serializable;
 import java.util.*;
 
-public class EmployeeList {
+public class EmployeeList implements Serializable {
 
 	List<Employee> employeeList;
 

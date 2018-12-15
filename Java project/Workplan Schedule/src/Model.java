@@ -1,43 +1,30 @@
+import java.io.Serializable;
 import java.util.*;
 import java.util.AbstractMap.SimpleEntry;
 
-public interface Model 
+public interface Model
 {
 
    //Date
-   
-   public void setDate(int day, int month, int year);
-   public int getDate();
-   public int getMonth();
-   public int getYear();
-   public boolean isLeapYear(int year);
-   public int numberOfDaysInMonth();
-   public String getMonthName();
-   public void nextDay();
-   public void nextDays(int days);
-   public Date copy();
-   public String toString();
-   public String toFormalString();
-   public boolean equals(Object obj);
-   public boolean isBetween(Date lowerBound, Date upperBound);
+   public boolean isBetween(Date date, Date lowerBound, Date upperBound);
    
    //Employee
    
-   public void setPreferences(List<SimpleEntry<String, Integer>> preferences);
-   public void addPreference(String test, int preference);
-   public List<SimpleEntry<String, Integer>> getTraining();
-   public void setTraining(List<SimpleEntry<String, Integer>> training);
-   public void addTraining(String test, int level);
-   public Boolean getHiddenStatus();
-   public void setHiddenStatus(Boolean status);
-   public int checkForPreference(String test);
-   public int checkForTraining(String test);
+   public void setPreferences(Employee employee, List<SimpleEntry<String, Integer>> preferences);
+   public void addPreference(Employee employee, String test, int preference);
+   public List<SimpleEntry<String, Integer>> getTraining(Employee employee);
+   public void setTraining(Employee employee, List<SimpleEntry<String, Integer>> training);
+   public void addTraining(Employee employee, String test, int level);
+   public Boolean getHiddenStatus(Employee employee);
+   public void setHiddenStatus(Employee employee, Boolean status);
+   public int checkForPreference(Employee employee, String test);
+   public int checkForTraining(Employee employee, String test);
    
    //EmployeeList
    
    public int size();
-   public void add(Employee person);
-   public void remove(int index);
+   public void addEmployee(Employee person);
+   public void removeEmployee(int index);
    public void removePerson(Employee person);
    public void hidePerson(Employee person);
    public void hidePerson(int index);
@@ -45,40 +32,20 @@ public interface Model
    public void showPerson(int index);
    public Person getPerson(int index);
    
-   //Person
-   
-   public String getName();
-   public void setName(String name);
-   public String getInitials();
-   public void setInitials(String initials);
-   
    //Schedule 
    
-   public Map<Person, List<Assignment>> getAssignments();
-   public void setAssignments(Map<Person, List<Assignment>> assignments);
-   public void addAssignment(Assignment assignment, Person employee);
-   public Map<Person, Map<Boolean, List<Assignment>>> sortAssignments();
-   public Date getStartDate();
-   public Date getEndDate();
+   public Map<Person, List<Assignment>> getAssignments(int index);
+   public void setAssignments(int index, Map<Person, List<Assignment>> assignments);
+   public void addAssignment(int index, Assignment assignment, Person employee);
+   public Map<Person, Map<Boolean, List<Assignment>>> sortAssignments(int index);
+   public Date getStartDate(int index);
+   public Date getEndDate(int index);
    
    //TeamLeader
    
    public Boolean login(String userName, String password);
-   public String getUserName();
-   public String getPassword();
    public void setPassword(String currPassword, String newPassword);
    public String getTeamName();
    public void setTeamName(String teamName);
-   
-   //Assignment
-   
-   public void setTest(String test);
-   public String getTest();
-   public void setDate(Date date);
-   public Date getAssDate();
-   public void setVacation();
-   public Boolean getVacation();
-   
-   
    
 }

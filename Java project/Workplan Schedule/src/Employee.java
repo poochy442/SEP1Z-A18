@@ -1,8 +1,9 @@
 import java.util.List;
 import java.util.AbstractMap.SimpleEntry;
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Employee extends Person {
+public class Employee extends Person implements Serializable {
 
 	/* Fields */
 	private List<SimpleEntry<String, Integer>> preferences;

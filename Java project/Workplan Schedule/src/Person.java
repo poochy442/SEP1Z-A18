@@ -1,5 +1,6 @@
+import java.io.Serializable;
 
-public class Person {
+public class Person implements Serializable {
 
 	/* Fields */
 	private String name, initials;

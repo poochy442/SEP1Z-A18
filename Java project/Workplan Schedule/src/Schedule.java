@@ -1,11 +1,12 @@
+import java.io.Serializable;
 import java.util.*;
 
-public class Schedule {
+public class Schedule implements Serializable {
 	
 	// Fields
 	private Map<Person, List<Assignment>> assignments;
 	private int counter;
-	Date startDate, endDate;
+	private Date startDate, endDate;
 	
 	// Constructor
 	public Schedule(Date startDate, Date endDate) {

@@ -1,6 +1,7 @@
+import java.io.Serializable;
 import java.util.*;
 
-public class Worksheet {
+public class Worksheet implements Serializable {
 
 	private Map<String, Integer> tests;
 
