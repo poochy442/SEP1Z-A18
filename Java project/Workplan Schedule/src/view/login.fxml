@@ -10,9 +10,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="519.0" prefWidth="701.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
   <children>
-    <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="519.0" prefWidth="1030.0" style="-fx-background-color: #000000;" VBox.vgrow="ALWAYS">
+    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: #000000;" VBox.vgrow="ALWAYS">
       <children>
             <Label alignment="CENTER" layoutX="232.0" layoutY="43.0" prefHeight="39.0" prefWidth="246.0" style="-fx-background-color: #000000;" text="Eurofins Work Schedule Planner " textAlignment="RIGHT" textFill="WHITE" wrapText="true">
                <font>
