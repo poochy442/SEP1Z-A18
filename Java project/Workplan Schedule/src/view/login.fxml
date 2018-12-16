@@ -1,28 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXPasswordField?>
-<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="519.0" prefWidth="701.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.LoginController">
   <children>
-    <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="519.0" prefWidth="1030.0" style="-fx-background-color: #000000;" VBox.vgrow="ALWAYS">
+    <AnchorPane style="-fx-background-color: #000000;" VBox.vgrow="ALWAYS">
       <children>
             <Label alignment="CENTER" layoutX="232.0" layoutY="43.0" prefHeight="39.0" prefWidth="246.0" style="-fx-background-color: #000000;" text="Eurofins Work Schedule Planner " textAlignment="RIGHT" textFill="WHITE" wrapText="true">
                <font>
                   <Font name="Verdana" size="14.0" />
                </font>
             </Label>
-            <AnchorPane layoutX="668.0" layoutY="90.0" prefHeight="339.0" prefWidth="291.0" style="-fx-border-color: white; -fx-background-color: black;" styleClass="fx">
+            <AnchorPane layoutX="632.0" layoutY="84.0" prefHeight="339.0" prefWidth="291.0" style="-fx-border-color: white; -fx-background-color: black;" styleClass="fx">
                <children>
-                  <JFXTextField fx:id="username" layoutX="78.0" layoutY="118.0" promptText="username" style="-fx-background-color: FF5733;" unFocusColor="#e40b0b" />
-                  <JFXPasswordField fx:id="password" layoutX="78.0" layoutY="191.0" promptText="password" style="-fx-background-color: FF5733;" unFocusColor="#df0202" />
                   <Label layoutX="92.0" layoutY="78.0" prefHeight="17.0" prefWidth="109.0" text="Username" textFill="WHITE">
                      <font>
                         <Font size="18.0" />
@@ -33,11 +31,9 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <JFXButton fx:id="login" buttonType="RAISED" layoutX="80.0" layoutY="254.0" prefHeight="25.0" prefWidth="135.0" ripplerFill="#eeeaea" style="-fx-background-color: FF5733;" text="Log in" textFill="#f5f2f2" underline="true">
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font>
-                  </JFXButton>
+                  <TextField fx:id="usernameLabel" layoutX="71.0" layoutY="120.0" promptText="username" />
+                  <PasswordField fx:id="passwordLabel" layoutX="71.0" layoutY="197.0" promptText="password" />
+                  <Button fx:id="loginButton" layoutX="120.0" layoutY="264.0" mnemonicParsing="false" onAction="#login" text="Login" />
                </children>
             </AnchorPane>
             <ImageView fitHeight="189.0" fitWidth="355.0" layoutX="185.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">

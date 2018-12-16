@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
@@ -16,14 +16,14 @@
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <JFXButton layoutX="464.0" layoutY="539.0" style="-fx-border-color: black;" text="Cancel" />
             <Label layoutX="279.0" layoutY="186.0" text="Please confirm the action of hiding the profile of employee:">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <JFXButton layoutX="365.0" layoutY="539.0" style="-fx-border-color: black;" text="Yes" />
             <Text layoutX="397.0" layoutY="251.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="122.13671875" />
+            <Button layoutX="355.0" layoutY="518.0" mnemonicParsing="false" text="Yes" />
+            <Button layoutX="509.0" layoutY="518.0" mnemonicParsing="false" text="Cancel" />
          </children>
     </AnchorPane>
   </children>

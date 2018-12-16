@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXTextArea?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.DatePicker?>
@@ -18,20 +17,20 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<fx:root prefHeight="600.0" prefWidth="1000.0" type="VBox" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.MainController">
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
       <children>
-            <SplitPane dividerPositions="0.3" prefHeight="375.0" prefWidth="640.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <SplitPane dividerPositions="0.3">
               <items>
-                <AnchorPane minHeight="0.0" minWidth="0.0" pickOnBounds="false" prefHeight="160.0" prefWidth="100.0">
+                <AnchorPane pickOnBounds="false">
                      <children>
                         <Label fx:id="addemployee" layoutX="71.0" layoutY="14.0" prefHeight="20.0" prefWidth="154.0" text="New Assignment">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <Label fx:id="modifyemployee" layoutX="14.0" layoutY="138.0" text="Name">
+                        <Label fx:id="modifyemployee" layoutX="15.0" layoutY="181.0" text="Name">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -41,25 +40,20 @@
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <Label fx:id="hideemployee" layoutX="10.0" layoutY="182.0" text="Start date">
+                        <Label fx:id="hideemployee" layoutX="10.0" layoutY="139.0" text="Start date">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <DatePicker fx:id="startdate" layoutX="95.0" layoutY="179.0" />
-                        <JFXButton fx:id="saveschedule" layoutX="128.0" layoutY="273.0" style="-fx-border-color: black;" text="Save">
-                           <font>
-                              <Font name="System Bold" size="14.0" />
-                           </font>
-                        </JFXButton>
+                        <DatePicker fx:id="startdate" layoutX="95.0" layoutY="136.0" />
                         <MenuButton layoutX="46.0" layoutY="322.0" mnemonicParsing="false" text="Manage Employees">
                           <items>
-                            <MenuItem mnemonicParsing="false" text="Add new employee" />
-                            <MenuItem mnemonicParsing="false" text="Modify employee" />
-                              <MenuItem mnemonicParsing="false" text="Remove employee" />
-                              <MenuItem mnemonicParsing="false" text="Hide employee" />
+                            <MenuItem fx:id="addEmployeeItem" mnemonicParsing="false" onAction="#addEmployee" text="Add new employee" />
+                            <MenuItem fx:id="modifyEmployeeItem" mnemonicParsing="false" onAction="#modifyEmployee" text="Modify employee" />
+                              <MenuItem fx:id="removeEmployeeItem" mnemonicParsing="false" onAction="#removeEmployee" text="Remove employee" />
+                              <MenuItem fx:id="hideEmployeeItem" mnemonicParsing="false" onAction="#hideEmployee" text="Hide employee" />
                               <SeparatorMenuItem mnemonicParsing="false" />
-                              <MenuItem fx:id="setsickvacations" mnemonicParsing="false" text="Set vacations / sick days" />
+                              <MenuItem fx:id="vacationItem" mnemonicParsing="false" onAction="#vacation" text="Set vacations / sick days" />
                           </items>
                            <font>
                               <Font size="18.0" />
@@ -70,7 +64,7 @@
                               <MenuItem mnemonicParsing="false" text="Add new test" />
                           </items>
                         </MenuButton>
-                        <MenuButton fx:id="availableemployees" layoutX="95.0" layoutY="136.0" mnemonicParsing="false" text="Employees">
+                        <MenuButton fx:id="availableemployees" layoutX="96.0" layoutY="179.0" mnemonicParsing="false" text="Employees">
                            <items>
                               <MenuItem mnemonicParsing="false" text="Employee 1">
                                  <graphic>
@@ -79,23 +73,12 @@
                            </items>
                         </MenuButton>
                         <ButtonBar layoutX="48.0" layoutY="514.0" prefHeight="40.0" prefWidth="200.0" />
-                        <JFXButton fx:id="generatecalendar" layoutX="74.0" layoutY="479.0" style="-fx-border-color: black;" text="Generate new Calendar" textAlignment="CENTER">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </JFXButton>
-                        <JFXButton fx:id="emailall" layoutX="103.0" layoutY="539.0" style="-fx-border-color: black;" text="E-mail all " textAlignment="CENTER">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </JFXButton>
                         <Label layoutX="10.0" layoutY="212.0" text="Comments">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <JFXTextArea fx:id="comments" layoutX="95.0" layoutY="204.0" prefHeight="29.0" prefWidth="189.0" unFocusColor="#e92929" wrapText="true" />
-                        <TextField fx:id="requiredempanalysis" layoutX="222.0" layoutY="136.0" prefHeight="25.0" prefWidth="37.0" />
+                        <TextField fx:id="requiredempanalysis" layoutX="223.0" layoutY="179.0" prefHeight="25.0" prefWidth="37.0" />
                         <Label layoutX="14.0" layoutY="106.0" text="Week type">
                            <font>
                               <Font size="14.0" />
@@ -103,8 +86,12 @@
                         </Label>
                         <CheckBox fx:id="longweek" layoutX="105.0" layoutY="106.0" mnemonicParsing="false" text="Long week" />
                         <CheckBox fx:id="shortweek" layoutX="191.0" layoutY="106.0" mnemonicParsing="false" text="Short week" />
+                        <Button fx:id="generateButton" layoutX="72.0" layoutY="502.0" mnemonicParsing="false" text="Generate calendar" />
+                        <Button layoutX="96.0" layoutY="542.0" mnemonicParsing="false" text="E-mail all" />
+                        <Button fx:id="saveButton" layoutX="135.0" layoutY="274.0" mnemonicParsing="false" text="Save" />
+                        <TextField layoutX="102.0" layoutY="210.0" />
                      </children></AnchorPane>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                <AnchorPane>
                      <children>
                         <TableView layoutY="28.0" prefHeight="545.0" prefWidth="696.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="28.0">
                           <columns>
@@ -121,7 +108,7 @@
                               <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                            </columnResizePolicy>
                         </TableView>
-                        <DatePicker layoutX="508.0" layoutY="2.0" />
+                        <DatePicker layoutX="491.0" layoutY="1.0" />
                         <Text layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="  Preview of current Schedule">
                            <font>
                               <Font size="14.0" />
@@ -134,4 +121,4 @@
       </children>
     </AnchorPane>
   </children>
-</fx:root>
+</VBox>
