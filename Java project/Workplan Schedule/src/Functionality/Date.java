@@ -163,4 +163,20 @@ public class Date implements Serializable {
 		}
 	}
 	
+	public boolean isBefore(Date date) {
+		if(year <= date.getYear()) {
+			if(month <= date.getMonth()) {
+				if(day < date.getDay()) {
+					return true;
+				} else {
+					return true;
+				}
+			} else {
+				return false;
+			}
+		} else {
+			return false;
+		}
+	}
+	
 }

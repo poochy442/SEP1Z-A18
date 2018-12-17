@@ -1,5 +1,6 @@
 package view;
 
+import Functionality.FileIO;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -27,6 +28,11 @@ public class MainController {
 	@FXML
 	Button generateButton;
 	
+	static Model model = (Model) FileIO.loadFromBin();
+	
+	public static void updateModel() {
+		model = FileIO.loadFromBin();
+	}
 	
 	@FXML
 	public void addEmployee(ActionEvent event) {
@@ -35,6 +41,20 @@ public class MainController {
 			Parent root = (Parent) loader.load();
 			Stage stage = new Stage();
 			stage.setTitle("Add Employee");
+			stage.setScene(new Scene(root));
+			stage.show();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@FXML
+	public void modifyWorksheet(ActionEvent event) {
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/manageWorksheet.fxml"));
+			Parent root = (Parent) loader.load();
+			Stage stage = new Stage();
+			stage.setTitle("Manage Worksheets");
 			stage.setScene(new Scene(root));
 			stage.show();
 		} catch (Exception e) {
@@ -59,7 +79,7 @@ public class MainController {
 	@FXML
 	public void removeEmployee(ActionEvent event) {
 		try {
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/remove.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/employeeListRemove.fxml"));
 			Parent root = (Parent) loader.load();
 			Stage stage = new Stage();
 			stage.setTitle("Remove Employee");
@@ -73,7 +93,7 @@ public class MainController {
 	@FXML
 	public void hideEmployee(ActionEvent event) {
 		try {
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/hide.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/employeeListHide.fxml"));
 			Parent root = (Parent) loader.load();
 			Stage stage = new Stage();
 			stage.setTitle("Hide Employee");
@@ -84,6 +104,7 @@ public class MainController {
 		}
 	}
 	
+	@FXML
 	public void vacation(ActionEvent event) {
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/vacationsickdays.fxml"));
@@ -97,5 +118,9 @@ public class MainController {
 		}
 	}
 
+	@FXML
+	public void save(ActionEvent event) {
+		FileIO.saveToBin(model);
+	}
 	
 }

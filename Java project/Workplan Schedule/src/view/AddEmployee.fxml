@@ -21,29 +21,19 @@
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <Label layoutX="58.0" layoutY="113.0" text="First Name">
+            <Label layoutX="58.0" layoutY="113.0" text="Name">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="59.0" layoutY="162.0" text="Last Name">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-            <Label layoutX="59.0" layoutY="207.0" text="Initials">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-            <Label layoutX="59.0" layoutY="249.0" text="E-mail address">
+            <Label layoutX="57.0" layoutY="162.0" text="Initials">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
             <TableView layoutX="381.0" layoutY="106.0">
               <columns>
-                <TableColumn prefWidth="153.0" text="List of desired skills" />
+                <TableColumn prefWidth="153.0" text="List of skills" />
               </columns>
             </TableView>
             <RadioButton layoutX="653.0" layoutY="143.0" mnemonicParsing="false" text="High Preference" />
@@ -63,10 +53,8 @@
             <Label layoutX="753.0" layoutY="117.0" text="Trained" />
             <Label layoutX="959.0" layoutY="117.0" text="Not trained" />
             <Button fx:id="saveButton" layoutX="434.0" layoutY="516.0" mnemonicParsing="false" onAction="#save" text="Save" />
-            <TextField layoutX="203.0" layoutY="111.0" />
-            <TextField layoutX="203.0" layoutY="160.0" />
-            <TextField layoutX="203.0" layoutY="202.0" />
-            <TextField layoutX="203.0" layoutY="247.0" />
+            <TextField fx:id="nameField" layoutX="203.0" layoutY="111.0" />
+            <TextField fx:id="initialsField" layoutX="201.0" layoutY="157.0" />
          </children>
          <opaqueInsets>
             <Insets />

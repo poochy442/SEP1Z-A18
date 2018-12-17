@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.RemoveEmployeeController">
+  <children>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Label contentDisplay="CENTER" layoutX="274.0" layoutY="43.0" prefHeight="27.0" prefWidth="369.0" text="List of Employees" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="285.0" layoutY="134.0" text="Please select the employee that you would like to choose">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="chooseButton" layoutX="353.0" layoutY="526.0" mnemonicParsing="false" onAction="#choose" text="Choose" />
+            <Button fx:id="cancelButton" layoutX="474.0" layoutY="526.0" mnemonicParsing="false" onAction="#cancel" text="Cancel" />
+            <ListView fx:id="employeeListView" layoutX="274.0" layoutY="173.0" onMouseClicked="#chooseEmployee" onMouseEntered="#updateEmployeeList" prefHeight="300.0" prefWidth="400.0" />
+         </children>
+    </AnchorPane>
+  </children>
+</VBox>

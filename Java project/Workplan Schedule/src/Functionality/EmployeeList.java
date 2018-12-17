@@ -57,6 +57,10 @@ public class EmployeeList implements Serializable {
 	public Person getPerson(int index) {
 		return employeeList.get(index);
 	}
+	
+	public List<Employee> getEmployees(){
+		return employeeList;
+	}
 
 	public String toString() {
 		String s = "";

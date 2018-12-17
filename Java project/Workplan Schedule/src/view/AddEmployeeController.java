@@ -1,8 +1,10 @@
 package view;
 
+import Functionality.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class AddEmployeeController {
@@ -11,8 +13,24 @@ public class AddEmployeeController {
 	Button saveButton;
 	
 	@FXML
+	TextField nameField;
+	@FXML
+	TextField initialsField;
+	
+	Model model = FileIO.loadFromBin();
+	
+	@FXML
 	public void save(ActionEvent event) {
-		//TODO Save
+		String name = nameField.getText();
+		String initials = initialsField.getText();
+		model.addEmployee(name, initials);
+		
+		FileIO.saveToBin(model);
+		
+		for(Employee e : model.getEmployees()) {
+			System.out.println(e);
+		}
+		
 		Stage stage = (Stage) saveButton.getScene().getWindow();
 		stage.close();
 	}

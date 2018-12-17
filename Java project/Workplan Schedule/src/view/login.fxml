@@ -31,8 +31,8 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="usernameLabel" layoutX="71.0" layoutY="120.0" promptText="username" />
-                  <PasswordField fx:id="passwordLabel" layoutX="71.0" layoutY="197.0" promptText="password" />
+                  <TextField fx:id="usernameTextField" layoutX="71.0" layoutY="120.0" promptText="username" />
+                  <PasswordField fx:id="passwordTextField" layoutX="71.0" layoutY="197.0" promptText="password" />
                   <Button fx:id="loginButton" layoutX="120.0" layoutY="264.0" mnemonicParsing="false" onAction="#login" text="Login" />
                </children>
             </AnchorPane>

@@ -5,6 +5,7 @@
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.SeparatorMenuItem?>
@@ -35,7 +36,7 @@
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <Label fx:id="removeemployee" layoutX="15.0" layoutY="72.0" text="Test">
+                        <Label fx:id="removeemployee" layoutX="21.0" layoutY="60.0" text="Test">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -54,15 +55,12 @@
                               <MenuItem fx:id="hideEmployeeItem" mnemonicParsing="false" onAction="#hideEmployee" text="Hide employee" />
                               <SeparatorMenuItem mnemonicParsing="false" />
                               <MenuItem fx:id="vacationItem" mnemonicParsing="false" onAction="#vacation" text="Set vacations / sick days" />
+                              <SeparatorMenuItem mnemonicParsing="false" />
+                              <MenuItem mnemonicParsing="false" onAction="#modifyWorksheet" text="Manage Worksheets" />
                           </items>
                            <font>
                               <Font size="18.0" />
                            </font>
-                        </MenuButton>
-                        <MenuButton fx:id="selectanalysis" layoutX="95.0" layoutY="70.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="112.0" text="Tests">
-                          <items>
-                              <MenuItem mnemonicParsing="false" text="Add new test" />
-                          </items>
                         </MenuButton>
                         <MenuButton fx:id="availableemployees" layoutX="96.0" layoutY="179.0" mnemonicParsing="false" text="Employees">
                            <items>
@@ -87,9 +85,9 @@
                         <CheckBox fx:id="longweek" layoutX="105.0" layoutY="106.0" mnemonicParsing="false" text="Long week" />
                         <CheckBox fx:id="shortweek" layoutX="191.0" layoutY="106.0" mnemonicParsing="false" text="Short week" />
                         <Button fx:id="generateButton" layoutX="72.0" layoutY="502.0" mnemonicParsing="false" text="Generate calendar" />
-                        <Button layoutX="96.0" layoutY="542.0" mnemonicParsing="false" text="E-mail all" />
-                        <Button fx:id="saveButton" layoutX="135.0" layoutY="274.0" mnemonicParsing="false" text="Save" />
+                        <Button fx:id="saveButton" layoutX="135.0" layoutY="274.0" mnemonicParsing="false" onAction="#save" text="Save" />
                         <TextField layoutX="102.0" layoutY="210.0" />
+                        <ListView layoutX="84.0" layoutY="44.0" prefHeight="52.0" prefWidth="203.0" />
                      </children></AnchorPane>
                 <AnchorPane>
                      <children>
