@@ -1,6 +1,14 @@
 package Functionality;
 import java.io.Serializable;
 
+/*
+ * Date is the class that handles time-related operations.
+ * 
+ * @author Kenneth Jensen
+ * @author Florin Bordei
+ * @author Teakosheen Joulak
+ * @author Jimmi
+ */
 public class Date implements Serializable {
 
 	/* Fields */
@@ -8,34 +16,65 @@ public class Date implements Serializable {
 	private static String[] monthNames = { "January", "February", "March", "April", "May", "June", "July", "August",
 			"September", "October", "November", "December" };
 
-	/* Constructor */
+	/*
+	 * This is the class constructor.
+	 * 
+	 * @param day day of the month.
+	 * @param month	month of the year, ranging from 1-12.
+	 * @param year the year in the gregorian calendar.
+	 */
 	public Date(int day, int month, int year) {
 		this.day = day;
 		this.month = month;
 		this.year = year;
 	}
 
-	/* Methods */
-	// Setters and getters
+	/*
+	 * Method to set the date, similar to the class constructor.
+	 * 
+	 * @param day day of the month.
+	 * @param month	month of the year, ranging from 1-12.
+	 * @param year the year in the gregorian calendar.
+	 */
 	public void setDate(int day, int month, int year) {
 		this.day = day;
 		this.month = month;
 		this.year = year;
 	}
 
+	/*
+	 * Method to get the day of the month.
+	 * 
+	 * @return the day of the month.
+	 */
 	public int getDay() {
 		return day;
 	}
 
+	/*
+	 * Method to get the month of the year.
+	 * 
+	 * @return the month of the year, ranging from 1-12.
+	 */
 	public int getMonth() {
 		return month;
 	}
 
+	/*
+	 * Method to get the year.
+	 * 
+	 * @return the year of the Date.
+	 */
 	public int getYear() {
 		return year;
 	}
 
-	// Method to check if it's a leap year
+	/*
+	 * Method to check, whether the year is a leap year.
+	 * 
+	 * @param year the year the method is to check.<!-- -->The usual use case is to pass the Dates year to this method.
+	 * @return A boolean denoting whether or not the year is a leap year.
+	 */
 	public boolean isLeapYear(int year) {
 		if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
 			return true;
@@ -44,7 +83,11 @@ public class Date implements Serializable {
 		}
 	}
 
-	// Method to find out the number of days in a month
+	/*
+	 * Method to get the number of days in a specific month.
+	 * 
+	 * @return the amount of days in the month.
+	 */
 	public int numberOfDaysInMonth() {
 		switch (this.month) {
 		case 1:
@@ -71,12 +114,18 @@ public class Date implements Serializable {
 		}
 	}
 
-	// Method to get the name of the month
+	/*
+	 * Method to get the month name, using a static field holding the names of the months.
+	 * 
+	 * @return the month name.
+	 */
 	public String getMonthName() {
 		return monthNames[this.month];
 	}
 	
-	// Method to forward one day
+	/*
+	 * Method to forward this Date to the next day.
+	 */
 	public void nextDay() {
 		if(day + 1 > numberOfDaysInMonth()) {
 			day = 1;
@@ -91,7 +140,12 @@ public class Date implements Serializable {
 		}
 	}
 	
-	// Method to forward a number of days, using the nextDay method
+	/*
+	 * Method to forward this Date a set amount of days.
+	 * 
+	 * @param days amount of days to forward.
+	 * @return a Date Object of that dates day, month and year.
+	 */
 	public Date nextDays(int days) {
 		for(int i = 0; i < days; i++) {
 			nextDay();
@@ -99,12 +153,20 @@ public class Date implements Serializable {
 		return this;
 	}
 	
-	// Copy method for returning the value
+	/*
+	 * Method to copy this date, used for composition
+	 * 
+	 * @return a Date object, thats a copy of this
+	 */
 	public Date copy() {
 		return new Date(day, month, year);
 	}
 	
-	// Method converting our date to a string
+	/*
+	 * (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
 	public String toString() {
 		String s = "";
 		// Pad string with leading zeros
@@ -114,14 +176,21 @@ public class Date implements Serializable {
 		return s;
 	}
 	
-	// Method converting our date to a formal string
+	/*
+	 * Method returning a string version of this Date in a formal format.
+	 * 
+	 * @see java.lang.Object#toString()
+	 */
 	public String toFormalString() {
 		String s = "";
 		s += String.format("%dth of %s, %d", day, getMonthName(), year);
 		return s;
 	}
 	
-	// Equals method
+	/*
+	 * (non-Javadoc)
+	 * @see java.lang.Object#equals(java.lang.Object)
+	 */
 	public boolean equals(Object obj) {
 		if(!(obj instanceof Date)) {
 			return false;
@@ -132,6 +201,12 @@ public class Date implements Serializable {
 				&& year == other.year;
 	}
 	
+	/*
+	 * Method to check whether this is between two given dates
+	 * 
+	 * @param lowerBound the earlier of the two Date parameters
+	 * @param upperBound the later of the two Date parameters
+	 */
 	public boolean isBetween(Date lowerBound, Date upperBound) {
 		if(lowerBound.equals(upperBound)) {
 			if(this.equals(lowerBound)) {
@@ -164,6 +239,11 @@ public class Date implements Serializable {
 		}
 	}
 	
+	/*
+	 * Method to check whether this is before a given date
+	 * 
+	 * @param date the Date to check against
+	 */
 	public boolean isBefore(Date date) {
 		if(year <= date.getYear()) {
 			if(month <= date.getMonth()) {
