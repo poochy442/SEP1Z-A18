@@ -4,13 +4,14 @@ import java.util.AbstractMap.SimpleEntry;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-/*
+/**
  * Employee is an extension of the Person class.<!-- -->This class extends the Person with functionality to store preferences of work and the training of the employee
  * 
  * @author Kenneth Jensen
  * @author Florin Bordei
  * @author Teakosheen Joulak
  * @author Jimmi
+ * @version 1.0
  */
 public class Employee extends Person implements Serializable {
 
@@ -18,11 +19,12 @@ public class Employee extends Person implements Serializable {
 	private List<SimpleEntry<String, Integer>> preferences;
 	private List<SimpleEntry<String, Integer>> training;
 	private Boolean hidden;
-	/*
+	
+	/**
 	 * This is the class constructor.
 	 * 
 	 * @param name the name of the employee.
-	 * @param the initial code of the employee.
+	 * @param initials the initial code of the employee.
 	 */
 	public Employee(String name, String initials) {
 		super(name, initials);
@@ -31,7 +33,7 @@ public class Employee extends Person implements Serializable {
 		hidden = false;
 	}
 
-	/*
+	/**
 	 * Method to get the preferences of the employee.
 	 * 
 	 * @return the list of preferences.
@@ -40,7 +42,7 @@ public class Employee extends Person implements Serializable {
 		return preferences;
 	}
 
-	/*
+	/**
 	 * Method to set the preferences of the employee.
 	 * 
 	 * @param preferences a list of the preferences of the employee.
@@ -49,7 +51,7 @@ public class Employee extends Person implements Serializable {
 		this.preferences = preferences;
 	}
 
-	/*
+	/**
 	 * Method to add a preference to the list of the employees preferences.
 	 * 
 	 * @param test test to add to the list.
@@ -59,7 +61,7 @@ public class Employee extends Person implements Serializable {
 		preferences.add(new SimpleEntry<String, Integer>(test, preference));
 	}
 	
-	/*
+	/**
 	 * Method to get the training of the employee.
 	 * 
 	 * @return the list of training.
@@ -68,7 +70,7 @@ public class Employee extends Person implements Serializable {
 		return training;
 	}
 	
-	/*
+	/**
 	 * Method to set the training of the employee.
 	 * 
 	 * @param training the list of training to set the employee to have.
@@ -77,7 +79,7 @@ public class Employee extends Person implements Serializable {
 		this.training = training;
 	}
 	
-	/*
+	/**
 	 * method to add training to the list of the employees training
 	 * 
 	 * @param test the test to add
@@ -87,7 +89,7 @@ public class Employee extends Person implements Serializable {
 		training.add(new SimpleEntry<String, Integer>(test, level));
 	}
 	
-	/*
+	/**
 	 * Method to get the hidden status of the employee.<!-- -->Being hidden means, that the employee will not show up in searches through the employeeList
 	 * 
 	 * @return a Boolean value denoting whether the employee is hidden or not
@@ -96,7 +98,7 @@ public class Employee extends Person implements Serializable {
 		return hidden;
 	}
 	
-	/*
+	/**
 	 * Method to set the employees hidden status
 	 * 
 	 * @param status the status to set the employee to
@@ -105,7 +107,7 @@ public class Employee extends Person implements Serializable {
 		hidden = status;
 	}
 
-	/*
+	/**
 	 * Method to check the employee for a preference
 	 * 
 	 * @param test the test to search for
@@ -120,7 +122,7 @@ public class Employee extends Person implements Serializable {
 		return 0;
 	}
 	
-	/*
+	/**
 	 * Method to check the empoyee for training
 	 * 
 	 * @param test the test to search for
@@ -135,7 +137,7 @@ public class Employee extends Person implements Serializable {
 		return -1;
 	}
 	
-	/*
+	/**
 	 * (non-Javadoc)
 	 * @see Functionality.Person#toString()
 	 */

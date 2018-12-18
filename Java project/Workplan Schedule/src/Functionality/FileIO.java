@@ -4,10 +4,24 @@ import java.io.*;
 
 import view.Model;
 
+/**
+ * FileIO is a class that handles the File I/O, meaning it saves to, and loads from, a binary file containing all the Objects in the model.
+ * 
+ * @author Kenneth Jensen
+ * @author Florin Bordei
+ * @author Teakosheen Joulak
+ * @author Jimmi
+ * @version 1.0
+ */
 public class FileIO {
 
 	private static String fileName = "data";
 
+	/**
+	 * Method to save a Model object to a binary file.
+	 * 
+	 * @param model model object to save.
+	 */
 	public static void saveToBin(Model model) {
 		ObjectOutputStream out = null;
 
@@ -27,6 +41,11 @@ public class FileIO {
 		}
 	}
 
+	/**
+	 * Method to load a Model from a binary file.
+	 * 
+	 * @return the model loaded from the binary file.
+	 */
 	public static Model loadFromBin() {
 		ObjectInputStream in = null;
 		Model model = new Model();

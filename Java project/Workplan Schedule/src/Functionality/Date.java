@@ -1,13 +1,14 @@
 package Functionality;
 import java.io.Serializable;
 
-/*
+/**
  * Date is the class that handles time-related operations.
  * 
  * @author Kenneth Jensen
  * @author Florin Bordei
  * @author Teakosheen Joulak
  * @author Jimmi
+ * @version 1.0
  */
 public class Date implements Serializable {
 
@@ -16,7 +17,7 @@ public class Date implements Serializable {
 	private static String[] monthNames = { "January", "February", "March", "April", "May", "June", "July", "August",
 			"September", "October", "November", "December" };
 
-	/*
+	/**
 	 * This is the class constructor.
 	 * 
 	 * @param day day of the month.
@@ -29,7 +30,7 @@ public class Date implements Serializable {
 		this.year = year;
 	}
 
-	/*
+	/**
 	 * Method to set the date, similar to the class constructor.
 	 * 
 	 * @param day day of the month.
@@ -42,7 +43,7 @@ public class Date implements Serializable {
 		this.year = year;
 	}
 
-	/*
+	/**
 	 * Method to get the day of the month.
 	 * 
 	 * @return the day of the month.
@@ -51,7 +52,7 @@ public class Date implements Serializable {
 		return day;
 	}
 
-	/*
+	/**
 	 * Method to get the month of the year.
 	 * 
 	 * @return the month of the year, ranging from 1-12.
@@ -60,7 +61,7 @@ public class Date implements Serializable {
 		return month;
 	}
 
-	/*
+	/**
 	 * Method to get the year.
 	 * 
 	 * @return the year of the Date.
@@ -69,7 +70,7 @@ public class Date implements Serializable {
 		return year;
 	}
 
-	/*
+	/**
 	 * Method to check, whether the year is a leap year.
 	 * 
 	 * @param year the year the method is to check.<!-- -->The usual use case is to pass the Dates year to this method.
@@ -83,7 +84,7 @@ public class Date implements Serializable {
 		}
 	}
 
-	/*
+	/**
 	 * Method to get the number of days in a specific month.
 	 * 
 	 * @return the amount of days in the month.
@@ -114,7 +115,7 @@ public class Date implements Serializable {
 		}
 	}
 
-	/*
+	/**
 	 * Method to get the month name, using a static field holding the names of the months.
 	 * 
 	 * @return the month name.
@@ -123,7 +124,7 @@ public class Date implements Serializable {
 		return monthNames[this.month];
 	}
 	
-	/*
+	/**
 	 * Method to forward this Date to the next day.
 	 */
 	public void nextDay() {
@@ -140,7 +141,7 @@ public class Date implements Serializable {
 		}
 	}
 	
-	/*
+	/**
 	 * Method to forward this Date a set amount of days.
 	 * 
 	 * @param days amount of days to forward.
@@ -153,7 +154,7 @@ public class Date implements Serializable {
 		return this;
 	}
 	
-	/*
+	/**
 	 * Method to copy this date, used for composition
 	 * 
 	 * @return a Date object, thats a copy of this
@@ -162,7 +163,7 @@ public class Date implements Serializable {
 		return new Date(day, month, year);
 	}
 	
-	/*
+	/**
 	 * (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
@@ -176,9 +177,10 @@ public class Date implements Serializable {
 		return s;
 	}
 	
-	/*
+	/**
 	 * Method returning a string version of this Date in a formal format.
 	 * 
+	 * @return a String containing the data of the date formatted in a format, for example: "12th of October, 2000".
 	 * @see java.lang.Object#toString()
 	 */
 	public String toFormalString() {
@@ -187,7 +189,7 @@ public class Date implements Serializable {
 		return s;
 	}
 	
-	/*
+	/**
 	 * (non-Javadoc)
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
@@ -201,11 +203,12 @@ public class Date implements Serializable {
 				&& year == other.year;
 	}
 	
-	/*
+	/**
 	 * Method to check whether this is between two given dates
 	 * 
 	 * @param lowerBound the earlier of the two Date parameters
 	 * @param upperBound the later of the two Date parameters
+	 * @return a boolean denoting whether the date is between the two parameters
 	 */
 	public boolean isBetween(Date lowerBound, Date upperBound) {
 		if(lowerBound.equals(upperBound)) {
@@ -239,10 +242,11 @@ public class Date implements Serializable {
 		}
 	}
 	
-	/*
-	 * Method to check whether this is before a given date
+	/**
+	 * Method to check whether this is before a given date.
 	 * 
-	 * @param date the Date to check against
+	 * @param date the Date to check against.
+	 * @return a boolean denoting whether the date is before the given date.
 	 */
 	public boolean isBefore(Date date) {
 		if(year <= date.getYear()) {

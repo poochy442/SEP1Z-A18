@@ -4,9 +4,23 @@ import java.awt.Desktop;
 import java.io.*;
 import java.util.*;
 
+/**
+ * HTMLGenerator is a Class that takes a pre-written HTML file and changes the value within to output a schedule.
+ * 
+ * @author Kenneth Jensen
+ * @author Florin Bordei
+ * @author Teakosheen Joulak
+ * @author Jimmi
+ * @version 1.0
+ */
 public class HTMLGenerator {
 
-	// Methods
+	/**
+	 * Method to save the data to a new HTML file.
+	 * 
+	 * @param schedule the schedule to save.
+	 * @param name the name of the file the class will create.
+	 */
 	public static void saveToHTML(Schedule schedule, String name) {
 		if(schedule.getAssignments().isEmpty()) {
 			return;

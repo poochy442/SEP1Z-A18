@@ -2,13 +2,14 @@ package Functionality;
 
 import java.io.Serializable;
 
-/*
+/**
  * Asssignment is the Class that handles a single assignment.<!-- -->It keeps track of whether the given assignment is a vacation, and if it is not, it keeps track of the test needing to be performed.
  * 
  * @author Kenneth Jensen
  * @author Florin Bordei
  * @author Teakosheen Joulak
  * @author Jimmi
+ * @version 1.0
  */
 public class Assignment implements Serializable {
 
@@ -16,7 +17,7 @@ public class Assignment implements Serializable {
 	private String test;
 	private Boolean vacation;
 
-	/*
+	/**
 	 * This is the class constructor.
 	 * 
 	 * @param date a Date Object giving the day, month and year of the assignment.
@@ -26,7 +27,7 @@ public class Assignment implements Serializable {
 		vacation = false;
 	}
 
-	/*
+	/**
 	 * This is the class constructor, specifying the String field 'test' to set for
 	 * this.
 	 * 
@@ -40,7 +41,7 @@ public class Assignment implements Serializable {
 		vacation = false;
 	}
 
-	/*
+	/**
 	 * This is a set method for the field test.
 	 * 
 	 * @param test the test of the assignment.
@@ -49,7 +50,7 @@ public class Assignment implements Serializable {
 		this.test = test;
 	}
 
-	/*
+	/**
 	 * This is a get method for the field test.
 	 * 
 	 * @return the test of the assignment.
@@ -58,7 +59,7 @@ public class Assignment implements Serializable {
 		return test;
 	}
 
-	/*
+	/**
 	 * This is a set method for the field date.
 	 * 
 	 * @param date a Date Object giving the day, month and year of the assignment.
@@ -67,7 +68,7 @@ public class Assignment implements Serializable {
 		this.date = date.copy();
 	}
 
-	/*
+	/**
 	 * This is a get method for the field date.
 	 * 
 	 * @return the date of the assignment.
@@ -76,7 +77,7 @@ public class Assignment implements Serializable {
 		return date.copy();
 	}
 
-	/*
+	/**
 	 * This is a set method for the field vacation.<!-- --> It takes no argument, as
 	 * setting this field will permanently set the field to true.
 	 */
@@ -84,7 +85,7 @@ public class Assignment implements Serializable {
 		vacation = true;
 	}
 
-	/*
+	/**
 	 * This is a get method for the field vacation.
 	 * 
 	 * @return a Boolean stating whether the assignment is a vacation.
@@ -93,7 +94,7 @@ public class Assignment implements Serializable {
 		return vacation;
 	}
 
-	/*
+	/**
 	 * (non-Javadoc)
 	 * 
 	 * @see java.lang.Object#toString()
