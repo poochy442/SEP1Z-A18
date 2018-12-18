@@ -1,4 +1,5 @@
 package Functionality;
+
 import java.awt.Desktop;
 import java.io.*;
 import java.util.*;
@@ -6,13 +7,16 @@ import java.util.*;
 public class HTMLGenerator {
 
 	// Methods
-	public static void saveToHTML(Schedule schedule) {
+	public static void saveToHTML(Schedule schedule, String name) {
+		if(schedule.getAssignments().isEmpty()) {
+			return;
+		}
 		List<String> emptyTable = new ArrayList<String>();
 		List<String> lines = new ArrayList<String>();
 
 		String filename = "Schedule.html";
 		File file = new File(filename);
-		File output = new File("NewSchedule.html");
+		File output = new File(name);
 		Scanner in = null;
 		PrintWriter out = null;
 
@@ -50,7 +54,7 @@ public class HTMLGenerator {
 		checkArray(lines, schedule.getStartDate(), schedule);
 
 		divEnd = 0;
-		
+
 		for (int i = 0; i < lines.size(); i++) {
 			out.println(lines.get(i));
 			out.flush();
@@ -70,8 +74,12 @@ public class HTMLGenerator {
 		int rowAdded = 0;
 		String tableDataRow = null;
 		List<Person> people = new ArrayList<>();
-		for(Person p : schedule.getAssignments().keySet()) {
-			people.add(p);
+		for (Person p : schedule.getAssignments().keySet()) {
+			if (schedule.getAssignments().get(p).isEmpty()) {
+				// Do nothing
+			} else {
+				people.add(p);
+			}
 		}
 		for (int i = 0; i < lines.size(); i++) {
 			int dollarFound = lines.get(i).indexOf("$");
@@ -111,22 +119,75 @@ public class HTMLGenerator {
 				break;
 			case "$dataName":
 				tableDataRow = lines.get(i);
+				int assignments = schedule.getAssignments().get(people.get(rowAdded)).size();
 				lines.set(i, lines.get(i).replace("$dataName", people.get(rowAdded).toString()));
-				lines.set(i, lines.get(i).replace("$dataMon", schedule.getAssignments().get(people.get(rowAdded)).get(0).getTest()));
-				lines.set(i, lines.get(i).replace("$dataTue", schedule.getAssignments().get(people.get(rowAdded)).get(1).getTest()));
-				lines.set(i, lines.get(i).replace("$dataWed", schedule.getAssignments().get(people.get(rowAdded)).get(2).getTest()));
-				lines.set(i, lines.get(i).replace("$dataThur", schedule.getAssignments().get(people.get(rowAdded)).get(3).getTest()));
-				lines.set(i, lines.get(i).replace("$dataFri", schedule.getAssignments().get(people.get(rowAdded)).get(4).getTest()));
-				lines.set(i, lines.get(i).replace("$dataSat", schedule.getAssignments().get(people.get(rowAdded)).get(5).getTest()));
-				lines.set(i, lines.get(i).replace("$dataSun", schedule.getAssignments().get(people.get(rowAdded)).get(6).getTest()));
-				if(rowAdded < people.size() - 1) {
-					lines.add(i + 1, tableDataRow);
-					rowAdded++;
+				for (int ass = 0; i < 7; i++) {
+					if (ass < assignments) {
+						switch (ass) {
+						case 0:
+							lines.set(i, lines.get(i).replace("$dataMon",
+									schedule.getAssignments().get(people.get(rowAdded)).get(0).getTest()));
+							break;
+						case 1:
+							lines.set(i, lines.get(i).replace("$dataTue",
+									schedule.getAssignments().get(people.get(rowAdded)).get(1).getTest()));
+							break;
+						case 2:
+							lines.set(i, lines.get(i).replace("$dataWed",
+									schedule.getAssignments().get(people.get(rowAdded)).get(2).getTest()));
+							break;
+						case 3:
+							lines.set(i, lines.get(i).replace("$dataThur",
+									schedule.getAssignments().get(people.get(rowAdded)).get(3).getTest()));
+							break;
+						case 4:
+							lines.set(i, lines.get(i).replace("$dataFri",
+									schedule.getAssignments().get(people.get(rowAdded)).get(4).getTest()));
+							break;
+						case 5:
+							lines.set(i, lines.get(i).replace("$dataSat",
+									schedule.getAssignments().get(people.get(rowAdded)).get(5).getTest()));
+							break;
+						case 6:
+							lines.set(i, lines.get(i).replace("$dataSun",
+									schedule.getAssignments().get(people.get(rowAdded)).get(6).getTest()));
+							break;
+						default:
+							break;
+						}
+					} else {
+						switch (ass) {
+						case 0:
+							lines.set(i, lines.get(i).replace("$dataMon", ""));
+							break;
+						case 1:
+							lines.set(i, lines.get(i).replace("$dataTue", ""));
+							break;
+						case 2:
+							lines.set(i, lines.get(i).replace("$dataWed", ""));
+							break;
+						case 3:
+							lines.set(i, lines.get(i).replace("$dataThur", ""));
+							break;
+						case 4:
+							lines.set(i, lines.get(i).replace("$dataFri", ""));
+							break;
+						case 5:
+							lines.set(i, lines.get(i).replace("$dataSat", ""));
+							break;
+						case 6:
+							lines.set(i, lines.get(i).replace("$dataSun", ""));
+							break;
+						default:
+							break;
+						}
+					}
+					if (rowAdded < people.size() - 1) {
+						lines.add(i + 1, tableDataRow);
+						rowAdded++;
+					}
 				}
-			default:
-				break;
 			}
 		}
-
 	}
 }

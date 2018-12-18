@@ -26,6 +26,7 @@ public class AddEmployeeController {
 		model.addEmployee(name, initials);
 		
 		FileIO.saveToBin(model);
+		MainController.updateModel();
 		
 		for(Employee e : model.getEmployees()) {
 			System.out.println(e);

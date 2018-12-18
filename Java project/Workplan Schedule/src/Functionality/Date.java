@@ -92,10 +92,11 @@ public class Date implements Serializable {
 	}
 	
 	// Method to forward a number of days, using the nextDay method
-	public void nextDays(int days) {
+	public Date nextDays(int days) {
 		for(int i = 0; i < days; i++) {
 			nextDay();
 		}
+		return this;
 	}
 	
 	// Copy method for returning the value

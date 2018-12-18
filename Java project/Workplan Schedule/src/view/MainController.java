@@ -1,16 +1,37 @@
 package view;
 
+import java.time.LocalDate;
+import java.util.Arrays;
+
+import Functionality.Date;
+import Functionality.Employee;
+import Functionality.EmployeeList;
 import Functionality.FileIO;
+import Functionality.HTMLGenerator;
+import Functionality.Person;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.ListView;
+import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
 import javafx.stage.Stage;
 
 public class MainController {
+	
+	@FXML
+	ListView<String> testList;
+	@FXML
+	ListView<String> employeeList;
+	
+	@FXML
+	DatePicker testStartDate;
 	
 	@FXML
 	MenuItem addEmployeeItem;
@@ -32,6 +53,47 @@ public class MainController {
 	
 	public static void updateModel() {
 		model = FileIO.loadFromBin();
+	}
+	
+	@FXML
+	public void generateHTML() {
+		for(int i = 0; i < model.getScheduleList().size(); i++) {
+			HTMLGenerator.saveToHTML(model.getSchedule(i), "Schedule " + (i + 1));
+		}
+	}
+	
+	@FXML
+	public void addAssignment() {
+		String test = testList.getSelectionModel().getSelectedItem();
+		LocalDate date = testStartDate.getValue();
+		Date startDate = new Date(date.getDayOfMonth(), date.getMonthValue(), date.getYear());
+		String empName = employeeList.getSelectionModel().getSelectedItem();
+		Employee chosenEmployee = null;
+		
+		for(Employee e : model.getEmployees()) {
+			if(e.getName().equals(empName)) {
+				chosenEmployee = e;
+				break;
+			}
+		}
+		
+		model.addAssignment(startDate, test, chosenEmployee);
+		
+		FileIO.saveToBin(model);
+		updateModel();
+	}
+	
+	@FXML
+	public void updateEmployeeList() {
+		employeeList.getItems().clear();
+		for(Employee e : model.getEmployees()) {
+			employeeList.getItems().add(e.getName());
+		}
+	}
+	
+	@FXML
+	public void updateTestList() {
+		testList.getItems().addAll(Arrays.asList("Feed", "Food", "Dairy", "Milk"));
 	}
 	
 	@FXML
@@ -121,6 +183,7 @@ public class MainController {
 	@FXML
 	public void save(ActionEvent event) {
 		FileIO.saveToBin(model);
+		System.out.println("Saved.");
 	}
 	
 }

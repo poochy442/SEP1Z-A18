@@ -3,20 +3,16 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.RadioButton?>
-<?import javafx.scene.control.Separator?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.AddEmployeeController">
+<VBox prefHeight="241.0" prefWidth="372.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.AddEmployeeController">
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
          <children>
-            <Label layoutX="419.0" layoutY="36.0" text="Add new employee">
+            <Label layoutX="104.0" layoutY="35.0" text="Add new employee">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -31,37 +27,16 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <TableView layoutX="381.0" layoutY="106.0">
-              <columns>
-                <TableColumn prefWidth="153.0" text="List of skills" />
-              </columns>
-            </TableView>
-            <RadioButton layoutX="653.0" layoutY="143.0" mnemonicParsing="false" text="High Preference" />
-            <RadioButton layoutX="760.0" layoutY="143.0" mnemonicParsing="false" text="Low preference" />
-            <RadioButton layoutX="877.0" layoutY="143.0" mnemonicParsing="false" text="No training" />
-            <RadioButton layoutX="653.0" layoutY="208.0" mnemonicParsing="false" text="High Preference" />
-            <RadioButton layoutX="760.0" layoutY="208.0" mnemonicParsing="false" text="Low preference" />
-            <RadioButton layoutX="877.0" layoutY="208.0" mnemonicParsing="false" text="No training" />
-            <RadioButton layoutX="653.0" layoutY="176.0" mnemonicParsing="false" text="High Preference" />
-            <RadioButton layoutX="760.0" layoutY="176.0" mnemonicParsing="false" text="Low preference" />
-            <RadioButton layoutX="877.0" layoutY="176.0" mnemonicParsing="false" text="No training" />
-            <RadioButton layoutX="959.0" layoutY="142.0" mnemonicParsing="false" text="Under training" />
-            <RadioButton layoutX="959.0" layoutY="175.0" mnemonicParsing="false" text="Under training" />
-            <RadioButton layoutX="959.0" layoutY="210.0" mnemonicParsing="false" text="Under training" />
-            <Separator layoutX="770.0" layoutY="137.0" orientation="VERTICAL" />
-            <Separator layoutX="553.0" layoutY="135.0" />
-            <Label layoutX="753.0" layoutY="117.0" text="Trained" />
-            <Label layoutX="959.0" layoutY="117.0" text="Not trained" />
-            <Button fx:id="saveButton" layoutX="434.0" layoutY="516.0" mnemonicParsing="false" onAction="#save" text="Save" />
-            <TextField fx:id="nameField" layoutX="203.0" layoutY="111.0" />
+            <Button fx:id="saveButton" layoutX="166.0" layoutY="218.0" mnemonicParsing="false" onAction="#save" text="Save" />
+            <TextField fx:id="nameField" layoutX="201.0" layoutY="110.0" />
             <TextField fx:id="initialsField" layoutX="201.0" layoutY="157.0" />
          </children>
          <opaqueInsets>
-            <Insets />
+            <Insets right="10.0" />
          </opaqueInsets>
     </AnchorPane>
   </children>
    <opaqueInsets>
-      <Insets />
+      <Insets right="10.0" />
    </opaqueInsets>
 </VBox>
