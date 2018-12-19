@@ -5,7 +5,8 @@ import java.io.*;
 import java.util.*;
 
 /**
- * HTMLGenerator is a Class that takes a pre-written HTML file and changes the value within to output a schedule.
+ * HTMLGenerator is a Class that takes a pre-written HTML file and changes the
+ * value within to output a schedule.
  * 
  * @author Kenneth Jensen
  * @author Florin Bordei
@@ -19,10 +20,10 @@ public class HTMLGenerator {
 	 * Method to save the data to a new HTML file.
 	 * 
 	 * @param schedule the schedule to save.
-	 * @param name the name of the file the class will create.
+	 * @param name     the name of the file the class will create.
 	 */
 	public static void saveToHTML(Schedule schedule, String name) {
-		if(schedule.getAssignments().isEmpty()) {
+		if (schedule.getAssignments().isEmpty()) {
 			return;
 		}
 		List<String> emptyTable = new ArrayList<String>();
@@ -135,71 +136,23 @@ public class HTMLGenerator {
 				tableDataRow = lines.get(i);
 				int assignments = schedule.getAssignments().get(people.get(rowAdded)).size();
 				lines.set(i, lines.get(i).replace("$dataName", people.get(rowAdded).toString()));
-				for (int ass = 0; i < 7; i++) {
-					if (ass < assignments) {
-						switch (ass) {
-						case 0:
-							lines.set(i, lines.get(i).replace("$dataMon",
-									schedule.getAssignments().get(people.get(rowAdded)).get(0).getTest()));
-							break;
-						case 1:
-							lines.set(i, lines.get(i).replace("$dataTue",
-									schedule.getAssignments().get(people.get(rowAdded)).get(1).getTest()));
-							break;
-						case 2:
-							lines.set(i, lines.get(i).replace("$dataWed",
-									schedule.getAssignments().get(people.get(rowAdded)).get(2).getTest()));
-							break;
-						case 3:
-							lines.set(i, lines.get(i).replace("$dataThur",
-									schedule.getAssignments().get(people.get(rowAdded)).get(3).getTest()));
-							break;
-						case 4:
-							lines.set(i, lines.get(i).replace("$dataFri",
-									schedule.getAssignments().get(people.get(rowAdded)).get(4).getTest()));
-							break;
-						case 5:
-							lines.set(i, lines.get(i).replace("$dataSat",
-									schedule.getAssignments().get(people.get(rowAdded)).get(5).getTest()));
-							break;
-						case 6:
-							lines.set(i, lines.get(i).replace("$dataSun",
-									schedule.getAssignments().get(people.get(rowAdded)).get(6).getTest()));
-							break;
-						default:
-							break;
-						}
-					} else {
-						switch (ass) {
-						case 0:
-							lines.set(i, lines.get(i).replace("$dataMon", ""));
-							break;
-						case 1:
-							lines.set(i, lines.get(i).replace("$dataTue", ""));
-							break;
-						case 2:
-							lines.set(i, lines.get(i).replace("$dataWed", ""));
-							break;
-						case 3:
-							lines.set(i, lines.get(i).replace("$dataThur", ""));
-							break;
-						case 4:
-							lines.set(i, lines.get(i).replace("$dataFri", ""));
-							break;
-						case 5:
-							lines.set(i, lines.get(i).replace("$dataSat", ""));
-							break;
-						case 6:
-							lines.set(i, lines.get(i).replace("$dataSun", ""));
-							break;
-						default:
-							break;
-						}
-					}
-					if (rowAdded < people.size() - 1) {
-						lines.add(i + 1, tableDataRow);
-						rowAdded++;
-					}
+				lines.set(i, lines.get(i).replace("$dataMon",
+						schedule.getAssignments().get(people.get(rowAdded)).get(0).getTest()));
+				lines.set(i, lines.get(i).replace("$dataTue",
+						schedule.getAssignments().get(people.get(rowAdded)).get(1).getTest()));
+				lines.set(i, lines.get(i).replace("$dataWed",
+						schedule.getAssignments().get(people.get(rowAdded)).get(2).getTest()));
+				lines.set(i, lines.get(i).replace("$dataThur",
+						schedule.getAssignments().get(people.get(rowAdded)).get(3).getTest()));
+				lines.set(i, lines.get(i).replace("$dataFri",
+						schedule.getAssignments().get(people.get(rowAdded)).get(4).getTest()));
+				lines.set(i, lines.get(i).replace("$dataSat",
+						schedule.getAssignments().get(people.get(rowAdded)).get(5).getTest()));
+				lines.set(i, lines.get(i).replace("$dataSun",
+						schedule.getAssignments().get(people.get(rowAdded)).get(6).getTest()));
+				if (rowAdded < people.size() - 1) {
+					lines.add(i + 1, tableDataRow);
+					rowAdded++;
 				}
 			}
 		}

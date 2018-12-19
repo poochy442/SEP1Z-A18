@@ -1,10 +1,12 @@
 package view;
 
-import Functionality.Employee;
-import Functionality.FileIO;
+import functionality.Employee;
+import functionality.FileIO;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class ModifyEmployeeController {

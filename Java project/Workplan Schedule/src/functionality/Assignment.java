@@ -53,7 +53,7 @@ public class Assignment implements Serializable {
 	/**
 	 * This is a get method for the field test.
 	 * 
-	 * @return the test of the assignment.
+	 * @return the test of the assignment, if test is null returns the empty string instead.
 	 */
 	public String getTest() {
 		if(test == null) {

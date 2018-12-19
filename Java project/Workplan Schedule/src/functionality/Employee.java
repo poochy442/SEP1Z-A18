@@ -58,6 +58,9 @@ public class Employee extends Person implements Serializable {
 	 * @param preference the preference of the employee, -1 for dislike, 0 for no preference, 1 for like.
 	 */
 	public void addPreference(String test, int preference) {
+		if(test == null) {
+			return;
+		}
 		preferences.add(new SimpleEntry<String, Integer>(test, preference));
 	}
 	
@@ -86,6 +89,9 @@ public class Employee extends Person implements Serializable {
 	 * @param level an integer denoting the training of the employee: -1 for no training, 0 for under training, 1 for trained
 	 */
 	public void addTraining(String test, int level) {
+		if(test == null) {
+			return;
+		}
 		training.add(new SimpleEntry<String, Integer>(test, level));
 	}
 	
