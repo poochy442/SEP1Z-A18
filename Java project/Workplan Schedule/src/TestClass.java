@@ -1,4 +1,4 @@
-package functionality;
+import functionality.*;
 
 public class TestClass {
 
