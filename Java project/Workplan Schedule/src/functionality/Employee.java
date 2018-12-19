@@ -10,7 +10,7 @@ import java.util.ArrayList;
  * @author Kenneth Jensen
  * @author Florin Bordei
  * @author Teakosheen Joulak
- * @author Jimmi
+ * @author Jimmi Børgesen
  * @version 1.0
  */
 public class Employee extends Person implements Serializable {

@@ -7,7 +7,7 @@ import java.io.Serializable;
  * @author Kenneth Jensen
  * @author Florin Bordei
  * @author Teakosheen Joulak
- * @author Jimmi
+ * @author Jimmi Børgesen
  * @version 1.0
  * @see Employee
  * @see TeamLeader

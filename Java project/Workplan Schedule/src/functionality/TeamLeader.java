@@ -6,7 +6,7 @@ package functionality;
  * @author Kenneth Jensen
  * @author Florin Bordei
  * @author Teakosheen Joulak
- * @author Jimmi
+ * @author Jimmi Børgesen
  * @version 1.0
  */
 public class TeamLeader extends Person {
