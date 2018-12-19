@@ -1,4 +1,4 @@
-package Functionality;
+package functionality;
 
 import java.io.Serializable;
 import java.util.*;
@@ -37,6 +37,12 @@ public class Schedule implements Serializable {
 	 * @return the assignment for every person.
 	 */
 	public Map<Person, List<Assignment>> getAssignments() {
+		for(Person p : assignments.keySet()) {
+			for(int i = assignments.get(p).size(); i < 7; i++) {
+				Date workingDate = startDate;
+				assignments.get(p).add(new Assignment(workingDate.nextDays(7 - i)));
+			}
+		}
 		return assignments;
 	}
 

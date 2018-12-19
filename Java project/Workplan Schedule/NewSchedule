@@ -1,0 +1,28 @@
+<html>
+
+<head>
+    <title>Eurofins Work-Schedule</title>
+    <link href="CSS/bootstrap.css" type="text/css" rel="stylesheet">
+    <link href="CSS/Stylesheet.css" rel="stylesheet" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="JS/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <h1>Eurofins Work-Schedule, Team 1</h1>
+    <div class="row">
+        <div class="col">
+            <table class="table">
+                <thead class="thead-dark">
+                    <th>Name</th><th>Monday<br>04/01/2019</th><th>Tuesday<br>05/01/2019</th><th>Wednesday<br>06/01/2019</th><th>Thursday<br>07/01/2019</th><th>Friday<br>08/01/2019</th><th>Saturday<br>09/01/2019</th><th>Sunday<br>10/01/2019</th>
+                </thead>
+                <tbody>
+                    <tr><td scope="row">Kenneth Jensen/KJ</td><td>$dataMon</td><td>$dataTue</td><td>$dataWed</td><td>$dataThur</td><td>$dataFri</td><td>$dataSat</td><td>$dataSun</td></tr>
+                </tbody>
+            </table> <!-- End Point -->
+        </div>
+    </div>
+</body>
+
+</html>

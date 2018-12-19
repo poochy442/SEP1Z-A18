@@ -3,12 +3,12 @@ package view;
 import java.time.LocalDate;
 import java.util.Arrays;
 
-import Functionality.Date;
-import Functionality.Employee;
-import Functionality.EmployeeList;
-import Functionality.FileIO;
-import Functionality.HTMLGenerator;
-import Functionality.Person;
+import functionality.Date;
+import functionality.Employee;
+import functionality.EmployeeList;
+import functionality.FileIO;
+import functionality.HTMLGenerator;
+import functionality.Person;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;

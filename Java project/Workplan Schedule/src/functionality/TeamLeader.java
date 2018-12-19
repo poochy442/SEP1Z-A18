@@ -1,4 +1,4 @@
-package Functionality;
+package functionality;
 
 /**
  * TeamLeader is a child class of Person, extending it with functionality to login to the system.

@@ -1,4 +1,4 @@
-package Functionality;
+package functionality;
 import java.io.Serializable;
 
 /**

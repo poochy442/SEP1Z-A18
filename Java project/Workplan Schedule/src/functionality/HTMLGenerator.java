@@ -1,4 +1,4 @@
-package Functionality;
+package functionality;
 
 import java.awt.Desktop;
 import java.io.*;

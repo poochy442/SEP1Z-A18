@@ -2,8 +2,8 @@ package view;
 
 import java.util.Calendar;
 
-import Functionality.Date;
-import Functionality.FileIO;
+import functionality.Date;
+import functionality.FileIO;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

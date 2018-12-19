@@ -1,4 +1,4 @@
-package Functionality;
+package functionality;
 import java.util.List;
 import java.util.AbstractMap.SimpleEntry;
 import java.io.Serializable;
@@ -139,7 +139,7 @@ public class Employee extends Person implements Serializable {
 	
 	/**
 	 * (non-Javadoc)
-	 * @see Functionality.Person#toString()
+	 * @see functionality.Person#toString()
 	 */
 	@Override
 	public String toString() {

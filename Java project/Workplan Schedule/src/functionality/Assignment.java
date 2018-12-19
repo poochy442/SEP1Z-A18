@@ -1,9 +1,9 @@
-package Functionality;
+package functionality;
 
 import java.io.Serializable;
 
 /**
- * Asssignment is the Class that handles a single assignment.<!-- -->It keeps track of whether the given assignment is a vacation, and if it is not, it keeps track of the test needing to be performed.
+ * Assignment is the Class that handles a single assignment.<!-- -->It keeps track of whether the given assignment is a vacation, and if it is not, it keeps track of the test needing to be performed.
  * 
  * @author Kenneth Jensen
  * @author Florin Bordei
@@ -56,6 +56,9 @@ public class Assignment implements Serializable {
 	 * @return the test of the assignment.
 	 */
 	public String getTest() {
+		if(test == null) {
+			return "";
+		}
 		return test;
 	}
 

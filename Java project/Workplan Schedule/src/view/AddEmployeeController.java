@@ -1,6 +1,7 @@
 package view;
 
-import Functionality.*;
+import functionality.Employee;
+import functionality.FileIO;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
